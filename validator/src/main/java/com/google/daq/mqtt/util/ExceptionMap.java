@@ -1,6 +1,7 @@
 package com.google.daq.mqtt.util;
 
 import com.google.daq.mqtt.util.SiteExceptionManager.DeviceExceptions;
+import com.google.daq.mqtt.util.SiteExceptionManager.DevicePatterns;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -170,7 +171,7 @@ public class ExceptionMap extends RuntimeException {
      * @param deviceExceptions management of exception exceptions
      * @return true if the resulting map is empty
      */
-    public boolean purge(DeviceExceptions deviceExceptions) {
+    public boolean purge(DevicePatterns deviceExceptions) {
       if (message == null) {
         return true;
       }

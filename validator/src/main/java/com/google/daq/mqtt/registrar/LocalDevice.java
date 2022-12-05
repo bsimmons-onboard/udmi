@@ -38,6 +38,7 @@ import com.google.daq.mqtt.util.ExceptionMap;
 import com.google.daq.mqtt.util.ExceptionMap.ErrorTree;
 import com.google.daq.mqtt.util.MessageUpgrader;
 import com.google.daq.mqtt.util.SiteExceptionManager.DeviceExceptions;
+import com.google.daq.mqtt.util.SiteExceptionManager.DevicePatterns;
 import com.google.daq.mqtt.util.ValidationException;
 import com.google.udmi.util.GeneralUtils;
 import com.google.udmi.util.JsonUtil;
@@ -691,7 +692,7 @@ class LocalDevice {
     return Integer.toString(hash < 0 ? -hash : hash);
   }
 
-  public void writeErrors(DeviceExceptions deviceExceptions) {
+  public void writeErrors(DevicePatterns deviceExceptions) {
     File errorsFile = new File(outDir, DEVICE_ERRORS_JSON);
     ErrorTree errorTree = getErrorTree(deviceExceptions);
     if (errorTree != null) {
@@ -707,12 +708,12 @@ class LocalDevice {
     }
   }
 
-  ErrorTree getErrorTree(DeviceExceptions deviceExceptions) {
+  ErrorTree getErrorTree(DevicePatterns patterns) {
     if (exceptionMap.isEmpty()) {
       return null;
     }
     ErrorTree errorTree = ExceptionMap.format(exceptionMap, ERROR_FORMAT_INDENT);
-    return errorTree.purge(deviceExceptions) ? null : errorTree;
+    return errorTree.purge(patterns) ? null : errorTree;
   }
 
   String getNormalizedTimestamp() {
@@ -817,7 +818,7 @@ class LocalDevice {
     samplesMap.throwIfNotEmpty();
   }
 
-  public Set<Entry<String, ErrorTree>> getTreeChildren(DeviceExceptions deviceExceptions) {
+  public Set<Entry<String, ErrorTree>> getTreeChildren(DevicePatterns deviceExceptions) {
     ErrorTree errorTree = getErrorTree(deviceExceptions);
     if (errorTree != null && errorTree.children != null) {
       return errorTree.children.entrySet();
