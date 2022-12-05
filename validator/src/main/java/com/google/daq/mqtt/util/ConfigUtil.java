@@ -1,5 +1,6 @@
 package com.google.daq.mqtt.util;
 
+import com.fasterxml.jackson.core.JsonParser.Feature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.util.ISO8601DateFormat;
@@ -22,6 +23,7 @@ public abstract class ConfigUtil {
   public static final String UDMI_VERSION = "1.4.0";
 
   private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper()
+      .enable(Feature.ALLOW_COMMENTS)
       .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS)
       .setDateFormat(new ISO8601DateFormat());
 

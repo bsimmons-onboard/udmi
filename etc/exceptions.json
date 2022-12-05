@@ -1,6 +1,6 @@
+// Example exceptions configuration file used for the site model.
 {
   "AHU-": {
     "ECMA 262 regex": {}
   }
 }
-
