@@ -7,7 +7,11 @@ cd ${ROOT_DIR}
 bin/clone_model
 
 TEST_SITE=sites/udmi_site_model
+device_files=$(ls -d ${TEST_SITE}/devices/*)
+exit_status=clean
+EXCEPTIONS_FILE=${TEST_SITE}/exceptions.json
 
+rm -f ${EXCEPTIONS_FILE}
 bin/registrar ${TEST_SITE}
 
 cat "${TEST_SITE}/registration_summary.json"
@@ -15,12 +19,20 @@ echo
 
 clean_devices=$(fgrep 'Z"' ${TEST_SITE}/registration_summary.json | wc -l)
 EXPECTED_CLEAN=3  # AHU-1 has a bad site location, so does not match as clean.
-exit_status=clean
 
 echo Found ${clean_devices} clean devices.
 [ "${clean_devices}" == $EXPECTED_CLEAN ] || exit_status=expected_clean
 
-device_files=$(ls -d ${TEST_SITE}/devices/*)
+# Check that exceptions can be used to mark devices as clean
+cp etc/exceptions.json ${EXCEPTIONS_FILE}
+bin/registrar ${TEST_SITE}
+clean_devices=$(fgrep 'Z"' ${TEST_SITE}/registration_summary.json | wc -l)
+EXCEPTED_CLEAN=4  # AHU-1 is now an exception
+
+echo Found ${clean_devices} clean devices.
+[ "${clean_devices}" == $EXCEPTED_CLEAN ] || exit_status=exception_clean
+
+false
 
 # Individual tests for generated config values
 echo
