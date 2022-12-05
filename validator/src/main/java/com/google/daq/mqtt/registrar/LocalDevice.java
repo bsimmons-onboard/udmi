@@ -37,6 +37,7 @@ import com.google.daq.mqtt.util.CloudIotManager;
 import com.google.daq.mqtt.util.ExceptionMap;
 import com.google.daq.mqtt.util.ExceptionMap.ErrorTree;
 import com.google.daq.mqtt.util.MessageUpgrader;
+import com.google.daq.mqtt.util.SiteExceptionManager.DeviceExceptions;
 import com.google.daq.mqtt.util.ValidationException;
 import com.google.udmi.util.GeneralUtils;
 import com.google.udmi.util.JsonUtil;
@@ -63,7 +64,6 @@ import java.util.Objects;
 import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeSet;
-import java.util.regex.Pattern;
 import org.apache.commons.io.IOUtils;
 import udmi.schema.Config;
 import udmi.schema.Envelope;
@@ -691,9 +691,9 @@ class LocalDevice {
     return Integer.toString(hash < 0 ? -hash : hash);
   }
 
-  public void writeErrors(List<Pattern> ignoreErrors) {
+  public void writeErrors(DeviceExceptions deviceExceptions) {
     File errorsFile = new File(outDir, DEVICE_ERRORS_JSON);
-    ErrorTree errorTree = getErrorTree(ignoreErrors);
+    ErrorTree errorTree = getErrorTree(deviceExceptions);
     if (errorTree != null) {
       try (PrintStream printStream = new PrintStream(new FileOutputStream(errorsFile))) {
         System.err.println("Updating " + errorsFile);
@@ -707,12 +707,12 @@ class LocalDevice {
     }
   }
 
-  ErrorTree getErrorTree(List<Pattern> ignoreErrors) {
+  ErrorTree getErrorTree(DeviceExceptions deviceExceptions) {
     if (exceptionMap.isEmpty()) {
       return null;
     }
     ErrorTree errorTree = ExceptionMap.format(exceptionMap, ERROR_FORMAT_INDENT);
-    return errorTree.purge(ignoreErrors) ? null : errorTree;
+    return errorTree.purge(deviceExceptions) ? null : errorTree;
   }
 
   String getNormalizedTimestamp() {
@@ -817,8 +817,8 @@ class LocalDevice {
     samplesMap.throwIfNotEmpty();
   }
 
-  public Set<Entry<String, ErrorTree>> getTreeChildren(List<Pattern> ignoreErrors) {
-    ErrorTree errorTree = getErrorTree(ignoreErrors);
+  public Set<Entry<String, ErrorTree>> getTreeChildren(DeviceExceptions deviceExceptions) {
+    ErrorTree errorTree = getErrorTree(deviceExceptions);
     if (errorTree != null && errorTree.children != null) {
       return errorTree.children.entrySet();
     }

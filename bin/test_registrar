@@ -11,6 +11,7 @@ device_files=$(ls -d ${TEST_SITE}/devices/*)
 exit_status=clean
 EXCEPTIONS_FILE=${TEST_SITE}/exceptions.json
 
+echo ###### Cleaning ${EXCEPTIONS_FILE} ######
 rm -f ${EXCEPTIONS_FILE}
 bin/registrar ${TEST_SITE}
 
@@ -24,6 +25,7 @@ echo Found ${clean_devices} clean devices.
 [ "${clean_devices}" == $EXPECTED_CLEAN ] || exit_status=expected_clean
 
 # Check that exceptions can be used to mark devices as clean
+echo ###### Copying ${EXCEPTIONS_FILE} ######
 cp etc/exceptions.json ${EXCEPTIONS_FILE}
 bin/registrar ${TEST_SITE}
 clean_devices=$(fgrep 'Z"' ${TEST_SITE}/registration_summary.json | wc -l)

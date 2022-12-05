@@ -1,15 +1,14 @@
 package com.google.daq.mqtt.util;
 
+import com.google.daq.mqtt.util.SiteExceptionManager.DeviceExceptions;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintStream;
-import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.TreeMap;
 import java.util.function.BiConsumer;
-import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -168,26 +167,26 @@ public class ExceptionMap extends RuntimeException {
     /**
      * Purge the indicated error patterns for the map.
      *
-     * @param ignoreErrors list of patterns to purge
+     * @param deviceExceptions management of exception exceptions
      * @return true if the resulting map is empty
      */
-    public boolean purge(List<Pattern> ignoreErrors) {
+    public boolean purge(DeviceExceptions deviceExceptions) {
       if (message == null) {
         return true;
       }
-      if (ignoreErrors == null) {
+      if (deviceExceptions == null) {
         return (children == null || children.isEmpty()) && child == null;
       }
-      if (ignoreErrors.stream().anyMatch(pattern -> pattern.matcher(message).find())) {
+      if (deviceExceptions.shouldPurge(message)) {
         return true;
       }
-      if (child != null && child.purge(ignoreErrors)) {
+      if (child != null && child.purge(deviceExceptions)) {
         return true;
       }
       if (children != null) {
         children =
             children.entrySet().stream()
-                .filter(entry -> !entry.getValue().purge(ignoreErrors))
+                .filter(entry -> !entry.getValue().purge(deviceExceptions))
                 .collect(Collectors.toMap(Entry::getKey, Entry::getValue));
         return children.isEmpty();
       }

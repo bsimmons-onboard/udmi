@@ -17,7 +17,7 @@ import com.google.common.collect.Sets;
 import com.google.daq.mqtt.util.CloudDeviceSettings;
 import com.google.daq.mqtt.util.CloudIotManager;
 import com.google.daq.mqtt.util.Common;
-import com.google.daq.mqtt.util.DeviceExceptionManager;
+import com.google.daq.mqtt.util.SiteExceptionManager;
 import com.google.daq.mqtt.util.ExceptionMap;
 import com.google.daq.mqtt.util.ExceptionMap.ErrorTree;
 import com.google.daq.mqtt.util.PubSubPusher;
@@ -198,16 +198,16 @@ public class Registrar {
 
   private void writeErrors() throws Exception {
     Map<String, Map<String, String>> errorSummary = new TreeMap<>();
-    DeviceExceptionManager dem = new DeviceExceptionManager(siteDir);
+    SiteExceptionManager exceptionManager = new SiteExceptionManager(siteDir);
     localDevices
         .values()
-        .forEach(device -> device.writeErrors(dem.forDevice(device.getDeviceId())));
+        .forEach(device -> device.writeErrors(exceptionManager.forDevice(device.getDeviceId())));
     localDevices
         .values()
         .forEach(
             device -> {
               Set<Entry<String, ErrorTree>> entries =
-                  device.getTreeChildren(dem.forDevice(device.getDeviceId()));
+                  device.getTreeChildren(exceptionManager.forDevice(device.getDeviceId()));
               entries
                   .forEach(
                       error ->
