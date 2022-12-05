@@ -41,10 +41,6 @@ public class SiteExceptionManager {
     }
   }
 
-  public boolean purgeException(String message) {
-    return false;
-  }
-
   /**
    * Get a list of allowed exception patterns for a given device.
    *
@@ -71,6 +67,7 @@ public class SiteExceptionManager {
   }
 
   public static class DeviceExceptions extends HashMap<String, Object> {
+
   }
 
   public static class DevicePatterns {
