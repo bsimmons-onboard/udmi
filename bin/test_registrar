@@ -32,8 +32,6 @@ EXCEPTED_CLEAN=4  # AHU-1 is now an exception
 echo Found ${clean_devices} clean devices.
 [ "${clean_devices}" == $EXCEPTED_CLEAN ] || exit_status=exception_clean
 
-false
-
 # Individual tests for generated config values
 echo
 echo Testing generated_config...
