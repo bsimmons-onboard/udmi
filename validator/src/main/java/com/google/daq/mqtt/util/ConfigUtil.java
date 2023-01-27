@@ -13,6 +13,7 @@ import udmi.schema.ExecutionConfiguration;
 public abstract class ConfigUtil {
 
   public static final String UDMI_VERSION = "1.4.0";
+  public static final String UDMI_TOOLS = System.getenv("UDMI_TOOLS");
 
   private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper()
       .enable(Feature.ALLOW_COMMENTS)
