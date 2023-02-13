@@ -170,6 +170,7 @@ public class BlobsetSequences extends SequenceBase {
       throw new SkipTest("No alternate registry defined");
     }
     // Phase one: initiate connection to alternate registry.
+    deviceConfig.system.operation.mode = SystemMode.ACTIVE;
     untilTrue("initial last_config matches config timestamp", this::stateMatchesConfigTimestamp);
     setDeviceConfigEndpointBlob(GOOGLE_ENDPOINT_HOSTNAME, altRegistry, false);
     untilSuccessfulRedirect(BlobPhase.APPLY);
@@ -187,6 +188,7 @@ public class BlobsetSequences extends SequenceBase {
       setDeviceConfigEndpointBlob(GOOGLE_ENDPOINT_HOSTNAME, registryId, false);
       untilSuccessfulRedirect(BlobPhase.APPLY);
       mirrorDeviceConfig();
+      system_mode_restart();
     });
 
     // Phase four: verify restoration of initial registry connection.
@@ -211,7 +213,7 @@ public class BlobsetSequences extends SequenceBase {
 
     deviceConfig.system.operation.mode = SystemMode.ACTIVE;
 
-    untilTrue("system mode is ACTIVE",
+    untilTrue("system mode is ACTIVE before restart",
         () -> deviceState.system.operation.mode.equals(SystemMode.ACTIVE));
 
     final Date last_config = deviceState.system.last_config;
@@ -221,7 +223,7 @@ public class BlobsetSequences extends SequenceBase {
     deviceConfig.system.operation.mode = SystemMode.RESTART;
 
     // Wait for the device to go through the correct states as it restarts.
-    untilTrue("system mode is INITIAL",
+    untilTrue("system mode is INITIAL after restart",
         () -> deviceState.system.operation.mode.equals(SystemMode.INITIAL));
 
     checkThat("restart count increased by one",
@@ -229,7 +231,7 @@ public class BlobsetSequences extends SequenceBase {
 
     deviceConfig.system.operation.mode = SystemMode.ACTIVE;
 
-    untilTrue("system mode is ACTIVE",
+    untilTrue("system mode is ACTIVE after restart",
         () -> deviceState.system.operation.mode.equals(SystemMode.ACTIVE));
 
     // Capture error from last_start unexpectedly changing due to restart condition.
