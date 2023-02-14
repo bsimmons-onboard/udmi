@@ -1238,10 +1238,12 @@ public class SequenceBase {
     assert deviceConfig.system.testing.endpoint_type == null;
     try {
       useAlternateClient = true;
+      info("TAP useAlternateClient true");
       deviceConfig.system.testing.endpoint_type = "alternate";
       whileDoing("using alternate client", evaluator);
     } finally {
       useAlternateClient = false;
+      info("TAP useAlternateClient false");
       catchToNull(() -> deviceConfig.system.testing.endpoint_type = null);
     }
   }
