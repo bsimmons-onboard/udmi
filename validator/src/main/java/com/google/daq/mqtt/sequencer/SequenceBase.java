@@ -1249,7 +1249,10 @@ public class SequenceBase {
   }
 
   protected void mirrorDeviceConfig() {
-    String receivedConfig = actualize(stringify(receivedUpdates.get(CONFIG_SUBTYPE)));
+    Config target = (Config) receivedUpdates.get(CONFIG_SUBTYPE);
+    // Since this is updating the mirror, use the opposite of what it would be locally.
+    target.system.testing.endpoint_type = useAlternateClient ? null : "alternate";
+    String receivedConfig = actualize(stringify(target));
     String topic = UPDATE_SUBFOLDER + "/" + CONFIG_SUBTYPE;
     reflector(!useAlternateClient).publish(getDeviceId(), topic, receivedConfig);
     // There's a race condition if the mirror command gets delayed, so chill for a bit.
