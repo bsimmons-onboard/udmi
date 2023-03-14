@@ -5,7 +5,16 @@ import static org.junit.Assert.fail;
 
 import com.google.daq.mqtt.TestCommon;
 import com.google.daq.mqtt.validator.Validator.MessageBundle;
+import java.lang.reflect.Method;
 import java.util.Map;
+import java.util.function.Supplier;
+import javassist.ClassPool;
+import javassist.CtClass;
+import javassist.CtMethod;
+import javassist.LoaderClassPath;
+import javassist.bytecode.CodeIterator;
+import javassist.bytecode.Mnemonic;
+import org.checkerframework.checker.units.qual.C;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.Description;
@@ -54,4 +63,37 @@ public class SequenceBaseTest {
   private Description makeTestDescription(String testName) {
     return Description.createTestDescription(SequenceBase.class, testName);
   }
+
+  @Test
+  public void bytecode_check() {
+    indirect(() -> null);
+  }
+
+  private void indirect(Supplier<Object> supplier) {
+    Supplier newSupplier = new Supplier<Object>() {
+      @Override
+      public Object get() {
+        return supplier.get();
+      }
+    };
+    decompile(newSupplier);
+  }
+  private void decompile(Supplier<Object> supplier) {
+    try {
+      ClassPool pool = new ClassPool();
+      Class<?> targetClass = supplier.getClass();
+      pool.appendClassPath(new LoaderClassPath(targetClass.getClassLoader()));
+      Method[] methods1 = targetClass.getMethods();
+      Method method = methods1[0];
+      CtClass ctClass = pool.get(method.getDeclaringClass().getName());
+      CtMethod ctMethod = ctClass.getMethod("get", "()Ljava/lang/Object;");
+      CodeIterator iterator = ctMethod.getMethodInfo().getCodeAttribute().iterator();
+      while(iterator.hasNext()) {
+        System.out.println(Mnemonic.OPCODE[iterator.byteAt(iterator.next())]);
+      }
+    } catch (Exception e) {
+      throw new RuntimeException("While handling method", e);
+    }
+  }
+
 }
