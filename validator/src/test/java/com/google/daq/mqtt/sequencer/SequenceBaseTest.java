@@ -67,6 +67,7 @@ public class SequenceBaseTest {
   @Test
   public void bytecode_check() {
     indirect(() -> null);
+    indirect(() -> Boolean.TRUE);
   }
 
   private void indirect(Supplier<Object> supplier) {
