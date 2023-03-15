@@ -12,6 +12,7 @@ import javassist.ClassPool;
 import javassist.CtClass;
 import javassist.CtMethod;
 import javassist.LoaderClassPath;
+import javassist.bytecode.CodeAttribute;
 import javassist.bytecode.CodeIterator;
 import javassist.bytecode.Mnemonic;
 import org.checkerframework.checker.units.qual.C;
@@ -25,6 +26,7 @@ import org.junit.runner.Description;
 public class SequenceBaseTest {
 
   private static final String TEST_TOPIC = "mock/topic";
+  private Integer constant1;
 
   /**
    * Reset the state of the underlying infrastructure for each test.
@@ -66,7 +68,8 @@ public class SequenceBaseTest {
 
   @Test
   public void bytecode_check() {
-    indirect(() -> null);
+    Integer constant2 = 4;
+    indirect(() -> constant1 + constant2);
     indirect(() -> Boolean.TRUE);
   }
 
@@ -79,6 +82,7 @@ public class SequenceBaseTest {
     };
     decompile(newSupplier);
   }
+
   private void decompile(Supplier<Object> supplier) {
     try {
       ClassPool pool = new ClassPool();
@@ -88,9 +92,39 @@ public class SequenceBaseTest {
       Method method = methods1[0];
       CtClass ctClass = pool.get(method.getDeclaringClass().getName());
       CtMethod ctMethod = ctClass.getMethod("get", "()Ljava/lang/Object;");
+      System.out.println(ctClass.getName() + " " + ctMethod.getName());
       CodeIterator iterator = ctMethod.getMethodInfo().getCodeAttribute().iterator();
-      while(iterator.hasNext()) {
-        System.out.println(Mnemonic.OPCODE[iterator.byteAt(iterator.next())]);
+      while (iterator.hasNext()) {
+        int index = iterator.next();
+        int opCode = iterator.byteAt(index);
+        System.out.println(index + " " + opCode + " " + Mnemonic.OPCODE[opCode]);
+        switch (opCode) {
+          case 180:  // getfield
+          {
+            int fieldIndex = iterator.u16bitAt(index + 1);
+            String fieldrefClassName = ctMethod.getMethodInfo().getConstPool()
+                .getFieldrefClassName(fieldIndex);
+            String fieldrefName = ctMethod.getMethodInfo().getConstPool()
+                .getFieldrefName(fieldIndex);
+            String fieldrefType = ctMethod.getMethodInfo().getConstPool()
+                .getFieldrefType(fieldIndex);
+            int getFieldrefClass = ctMethod.getMethodInfo().getConstPool()
+                .getFieldrefClass(fieldIndex);
+            System.out.println("  field class " + fieldrefClassName);
+            break;
+          }
+          case 185:  // invokeinterface
+          {
+            int fieldIndex = iterator.u16bitAt(index + 1);
+            int count = iterator.byteAt(index + 3);
+            int zero = iterator.byteAt(index + 4);
+            String name = ctMethod.getMethodInfo().getConstPool()
+                .getInterfaceMethodrefName(fieldIndex);
+            System.out.println("  method name " + name);
+          }
+          default:
+            // Nothing, just go to next.
+        }
       }
     } catch (Exception e) {
       throw new RuntimeException("While handling method", e);
