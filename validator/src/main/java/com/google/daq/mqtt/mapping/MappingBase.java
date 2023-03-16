@@ -10,6 +10,7 @@ import com.google.daq.mqtt.util.PubSubClient;
 import com.google.udmi.util.SiteModel;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 abstract class MappingBase {
 
@@ -20,6 +21,7 @@ abstract class MappingBase {
   private String discoveryNodeId;
   String mappingEngineId;
   private String selfId;
+  private String updateTopic;
 
   private void processArgs(String[] args) {
     ArrayList<String> argList = new ArrayList<>(List.of(args));
@@ -36,6 +38,9 @@ abstract class MappingBase {
           case "-t":
             pubsubSubscription = removeNextArg(argList);
             break;
+          case "-u":
+            updateTopic = removeNextArg(argList);
+            break;
           case "-d":
             discoveryNodeId = removeNextArg(argList);
             break;
@@ -49,7 +54,7 @@ abstract class MappingBase {
             throw new RuntimeException("Unknown cmdline option " + option);
         }
       } catch (Exception e) {
-        throw new RuntimeException("While processing option " + option);
+        throw new RuntimeException("While processing option " + option, e);
       }
     }
   }
@@ -61,7 +66,9 @@ abstract class MappingBase {
     siteModel.initialize();
     checkNotNull(siteModel, "site model not defined");
     String registryId = checkNotNull(siteModel.getRegistryId(), "site model registry_id null");
-    String updateTopic = checkNotNull(siteModel.getUpdateTopic(), "site model update_topic null");
+    String useUpdateTopic = checkNotNull(
+        Optional.ofNullable(updateTopic).orElseGet(siteModel::getUpdateTopic),
+        "site model update_topic null");
     String projectId = checkNotNull(this.projectId, "project id not defined");
     String subscription = checkNotNull(this.pubsubSubscription, "subscription not defined");
     client = new PubSubClient(projectId, registryId, subscription, updateTopic, false);
