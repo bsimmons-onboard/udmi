@@ -114,6 +114,7 @@ public class PubSubClient implements MessagePublisher, MessageHandler {
       }
       subscriber = Subscriber.newBuilder(subscriptionName, new MessageProcessor()).build();
       subscriber.startAsync().awaitRunning();
+      System.err.println("Listening on PubSub subscription " + subscriptionName);
 
       if (updateTopic != null) {
         ProjectTopicName topicName = ProjectTopicName.of(projectId, updateTopic);
@@ -281,6 +282,7 @@ public class PubSubClient implements MessagePublisher, MessageHandler {
       }
       String subFolder = String.format("events/%s/%s", deviceId, topic);
       Preconditions.checkNotNull(registryId, "registry id not defined");
+      // TODO: Fix this so that it properly uses subFolder and subType... ?
       Map<String, String> attributesMap = Map.of(
           "projectId", projectId,
           "subFolder", subFolder,

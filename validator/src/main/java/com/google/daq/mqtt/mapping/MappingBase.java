@@ -17,7 +17,6 @@ abstract class MappingBase {
   private String projectId;
   SiteModel siteModel;
   private PubSubClient client;
-  private String pubsubSubscription;
   private String discoveryNodeId;
   String mappingEngineId;
   private String selfId;
@@ -34,9 +33,6 @@ abstract class MappingBase {
             break;
           case "-s":
             siteModel = new SiteModel(removeNextArg(argList));
-            break;
-          case "-t":
-            pubsubSubscription = removeNextArg(argList);
             break;
           case "-u":
             updateTopic = removeNextArg(argList);
@@ -60,7 +56,6 @@ abstract class MappingBase {
   }
 
   void initialize(String flavor, String[] args, List<HandlerSpecification> handlers) {
-    pubsubSubscription = "mapping-" + flavor;
     selfId = "_mapping_" + flavor;
     processArgs(args);
     siteModel.initialize();
@@ -70,7 +65,8 @@ abstract class MappingBase {
         Optional.ofNullable(updateTopic).orElseGet(siteModel::getUpdateTopic),
         "site model update_topic null");
     String projectId = checkNotNull(this.projectId, "project id not defined");
-    String subscription = checkNotNull(this.pubsubSubscription, "subscription not defined");
+    String pubsubSubscription = "mapping-" + flavor;
+    String subscription = checkNotNull(pubsubSubscription, "subscription not defined");
     client = new PubSubClient(projectId, registryId, subscription, updateTopic, false);
     handlers.forEach(this::registerHandler);
   }
