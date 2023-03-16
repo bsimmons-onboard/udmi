@@ -128,8 +128,8 @@ public class Validator {
   private static final long REPORT_INTERVAL_SEC = 15;
   private static final String EXCLUDE_DEVICE_PREFIX = "_";
   private static final String VALIDATION_REPORT_DEVICE = "_validator";
-  private static final String VALIDATION_EVENT_TOPIC = "validation/event";
-  private static final String VALIDATION_STATE_TOPIC = "validation/state";
+  private static final String VALIDATION_EVENT_TOPIC = "event/validation";
+  private static final String VALIDATION_STATE_TOPIC = "state/validation";
   private static final String POINTSET_SUBFOLDER = "pointset";
   private static final Date START_TIME = new Date();
   private final Map<String, ReportingDevice> reportingDevices = new TreeMap<>();

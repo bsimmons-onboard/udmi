@@ -270,23 +270,40 @@ public class PubSubClient implements MessagePublisher, MessageHandler {
   }
 
   private String getMapKey(SubType subType, SubFolder subFolder) {
-    return subFolder + "/" + (subType != null ? subType : SubType.EVENT);
+    return (subType != null ? subType : SubType.EVENT) + "/" + subFolder;
   }
 
   @Override
-  public String publish(String deviceId, String topic, String data) {
+  public String publish(String deviceId, String typeFolder, String data) {
     try {
+      String[] parts = typeFolder.split("/", 2);
+      SubType subType = SubType.fromValue(parts[0]);
+      SubFolder subFolder = SubFolder.fromValue(parts[1]);
+      return publish(deviceId, subType, subFolder, data);
+    } catch (Exception e) {
+      throw new RuntimeException(
+          String.format("While publishing to %s as %s", deviceId, typeFolder), e);
+    }
+  }
+
+  @Override
+  public String publish(String deviceId, SubType type, SubFolder folder, String data) {
+    try {
+      if (publisher == null) {
+        throw new IllegalStateException(
+            String.format("No output publisher topic defined to send %s/%s%n", type, folder));
+      }
       if (deviceId == null) {
-        System.err.printf("Refusing to publish to %s due to unspecified device%n", topic);
+        System.err.printf("Missing device for %s/%s%n", type, folder);
         return null;
       }
-      String subFolder = String.format("events/%s/%s", deviceId, topic);
       Preconditions.checkNotNull(registryId, "registry id not defined");
-      // TODO: Fix this so that it properly uses subFolder and subType... ?
       Map<String, String> attributesMap = Map.of(
           "projectId", projectId,
-          "subFolder", subFolder,
-          "deviceId", registryId // intentional b/c of udmi_reflect function
+          "subType", type.value(),
+          "subFolder", folder.value(),
+          "deviceId", deviceId,
+          "registryId", registryId
       );
       PubsubMessage message = PubsubMessage.newBuilder()
           .setData(ByteString.copyFromUtf8(data))
@@ -294,7 +311,7 @@ public class PubSubClient implements MessagePublisher, MessageHandler {
           .build();
       ApiFuture<String> publish = publisher.publish(message);
       publish.get(); // Wait for publish to complete.
-      System.err.printf("Published to %s/%s%n", registryId, subFolder);
+      System.err.printf("Published %s/%s as %s/%s%n", registryId, deviceId, type, folder);
       return null;
     } catch (Exception e) {
       throw new RuntimeException("While publishing message", e);

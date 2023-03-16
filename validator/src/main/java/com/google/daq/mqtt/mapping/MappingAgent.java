@@ -81,9 +81,15 @@ public class MappingAgent extends MappingBase {
   }
 
   private void mappingEventHandler(Envelope envelope, MappingEvent mappingEvent) {
+    if (envelope.deviceId == null) {
+      envelope.deviceId = "AHU-1";
+    }
     String deviceId = envelope.deviceId;
+    if (mappingEvent.entities == null) {
+      System.err.println("Skipping empty mapping event for " + deviceId);
+      return;
+    }
     System.err.println("Processing mapping event for " + deviceId);
-
     mappingEvent.entities.forEach((guid, entity) -> {
       DeviceMappingState state = mappingSink.ensureDeviceState(deviceId);
       state.guid = guid;
