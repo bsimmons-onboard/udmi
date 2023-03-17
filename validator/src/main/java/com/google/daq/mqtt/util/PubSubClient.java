@@ -62,12 +62,10 @@ public class PubSubClient implements MessagePublisher, MessageHandler {
   private final String projectId;
   private final String registryId;
 
+  private final MessageHandler messageHandler;
   private final Subscriber subscriber;
   private final Publisher publisher;
   private final boolean flushSubscription;
-  private final Map<String, HandlerConsumer<Object>> handlers = new HashMap<>();
-  private final BiMap<String, Class<?>> typeClasses = HashBiMap.create();
-  private final Map<Class<?>, SimpleEntry<SubType, SubFolder>> classTypes = new HashMap<>();
 
   /**
    * Create a simple proxy instance.
@@ -124,35 +122,11 @@ public class PubSubClient implements MessagePublisher, MessageHandler {
         publisher = null;
       }
 
-      initializeHandlerTypes();
+      messageHandler = new MessageHandlerDelegate(this);
 
       active.set(true);
     } catch (Exception e) {
       throw new RuntimeException(String.format(CONNECT_ERROR_FORMAT, projectId), e);
-    }
-  }
-
-  private void initializeHandlerTypes() {
-    Arrays.stream(SubType.values()).forEach(type -> Arrays.stream(SubFolder.values())
-        .forEach(folder -> registerHandlerType(type, folder)));
-  }
-
-  private void registerHandlerType(SubType type, SubFolder folder) {
-    String mapKey = getMapKey(type, folder);
-    Class<?> messageClass = getMessageClass(type, folder);
-    if (messageClass != null) {
-      typeClasses.put(mapKey, messageClass);
-      classTypes.put(messageClass, new SimpleEntry<>(type, folder));
-    }
-  }
-
-  private Class<?> getMessageClass(SubType type, SubFolder folder) {
-    String typeName = Common.capitalize(folder.value()) + Common.capitalize(type.value());
-    String className = SystemState.class.getPackageName() + "." + typeName;
-    try {
-      return Class.forName(className);
-    } catch (ClassNotFoundException e) {
-      return null;
     }
   }
 
@@ -224,53 +198,17 @@ public class PubSubClient implements MessagePublisher, MessageHandler {
   @Override
   @SuppressWarnings("unchecked")
   public <T> void registerHandler(Class<T> clazz, HandlerConsumer<T> handler) {
-    String mapKey = typeClasses.inverse().get(clazz);
-    if (handlers.put(mapKey, (HandlerConsumer<Object>) handler) != null) {
-      throw new RuntimeException("Type handler already defined for " + mapKey);
-    }
+    messageHandler.registerHandler(clazz, handler);
   }
 
   @Override
   public void publishMessage(String deviceId, Object message) {
-    SimpleEntry<SubType, SubFolder> typePair = classTypes.get(message.getClass());
-    String mqttTopic = getMapKey(typePair.getKey(), typePair.getValue());
-    publish(deviceId, mqttTopic, JsonUtil.stringify(message));
+    messageHandler.publishMessage(deviceId, message);
   }
 
   @Override
   public void messageLoop() {
-    while (isActive()) {
-      try {
-        handlerHandler(takeNextMessage());
-      } catch (Exception e) {
-        System.err.println("Exception processing received message:");
-        e.printStackTrace();
-      }
-    }
-  }
-
-  private void ignoreMessage(Envelope attributes, Object message) {
-  }
-
-  private void handlerHandler(MessageBundle bundle) {
-    Envelope envelope = JsonUtil.convertTo(Envelope.class, bundle.attributes);
-    String mapKey = getMapKey(envelope.subType, envelope.subFolder);
-    try {
-      Class<?> handlerType = typeClasses.computeIfAbsent(mapKey, key -> {
-        System.err.println("Ignoring messages of type " + mapKey);
-        return Object.class;
-      });
-      Object messageObject = JsonUtil.convertTo(handlerType, bundle.message);
-      HandlerConsumer<Object> handlerConsumer = handlers.computeIfAbsent(mapKey,
-          key -> this::ignoreMessage);
-      handlerConsumer.accept(envelope, messageObject);
-    } catch (Exception e) {
-      throw new RuntimeException("While processing message key " + mapKey, e);
-    }
-  }
-
-  private String getMapKey(SubType subType, SubFolder subFolder) {
-    return (subType != null ? subType : SubType.EVENT) + "/" + subFolder;
+    messageHandler.messageLoop();
   }
 
   @Override
