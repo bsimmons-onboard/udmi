@@ -70,9 +70,7 @@ abstract class MappingBase {
     registryId = checkNotNull(siteModel.getRegistryId(), "site model registry_id null");
     String pubsubSubscription = "mapping-" + flavor;
     String subscription = checkNotNull(pubsubSubscription, "subscription not defined");
-    String useUpdateTopic = checkNotNull(
-        Optional.ofNullable(updateTopic).orElseGet(siteModel::getUpdateTopic),
-        "site model update_topic null");
+    String useUpdateTopic = Optional.ofNullable(updateTopic).orElseGet(siteModel::getUpdateTopic);
     client = getMessageClient(subscription, useUpdateTopic);
     handlers.forEach(this::registerHandler);
   }
