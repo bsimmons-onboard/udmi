@@ -5,7 +5,7 @@ Republishes GCP Pub/Sub messages from one subscription into another project verb
 **NOTES**
 - `messageId` of republished messages **will** differ from the original message
 - no error/connection loss handling
-- src/dest project encoding:
+- source/target project encoding:
   - use // for trace capture/playback to trace files (complete attributes)
   - use ++ for tests capture/playback to trace files (in tests/____.trace)
 

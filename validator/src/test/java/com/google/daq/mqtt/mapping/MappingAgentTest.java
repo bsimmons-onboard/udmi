@@ -13,9 +13,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 import org.junit.Test;
 
+/**
+ * Basic tests for the mapping agent.
+ */
 public class MappingAgentTest extends TestBase {
 
   public static final String TRACE_DIR = TestCommon.TOOL_ROOT + "/tests/mapping.trace";
@@ -25,7 +27,8 @@ public class MappingAgentTest extends TestBase {
     List<String> simpleArgs = ImmutableList.of("-s", SITE_DIR, "-d", DEVICE_ID, "-r", TRACE_DIR);
     MappingAgent mappingAgent = new MappingAgent();
     mappingAgent.activate(simpleArgs.toArray(new String[0]));
-    List<OutputBundle> outputMessages = ((MessageReadingClient) mappingAgent.client).getOutputMessages();
+    List<OutputBundle> outputMessages =
+        ((MessageReadingClient) mappingAgent.client).getOutputMessages();
     Map<String, List<OutputBundle>> topics = new HashMap<>();
     outputMessages.forEach(
         bundle -> topics.computeIfAbsent(bundle.topic, thing -> new ArrayList<>()).add(bundle));
