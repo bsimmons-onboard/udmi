@@ -56,7 +56,7 @@ def tests_publisher(path: str, message):
   os.makedirs(path, exist_ok = True)
 
   subType = message.attributes.get('subType') or 'event'
-  subFolder = message.attributes.get('subFolder') or 'unknown'
+  subFolder = message.attributes.get('subFolder') or 'mapping'
   file_name = '%s/%03d_%s_%s.json' % (path, tests_index, subType, subFolder)
 
   print('Writing tests file ' + file_name)

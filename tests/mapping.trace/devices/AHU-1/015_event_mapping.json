@@ -1,0 +1,57 @@
+{
+  "timestamp": "2023-03-01T19:00:02.139599+00:00",
+  "version": "1.4.0",
+  "entities": {
+    "ebe40a2e-b753-4883-8c2b-52a675b77191": {
+      "type": "FACILITIES/BUILDING",
+      "code": "US-SVL-TC2-CLEAN"
+    },
+    "3c18b339-454e-4b5b-925e-6125c24a6da3": {
+      "connections": {
+        "ebe40a2e-b753-4883-8c2b-52a675b77191": [
+          "CONTAINS"
+        ]
+      },
+      "type": "HVAC/FAN_SS_DSP",
+      "code": "US-SVL-TC2-CLEAN.VAV.vav__ef1",
+      "translation": {},
+      "links": {
+        "vav__11": {
+          "zone_air_cooling_temperature_setpoint_1": "zone_air_cooling_temperature_setpoint_1",
+          "zone_air_heating_temperature_setpoint_1": "zone_air_heating_temperature_setpoint_1",
+          "zone_air_cooling_temperature_setpoint_2": "zone_air_cooling_temperature_setpoint_2",
+          "zone_air_heating_temperature_setpoint_2": "zone_air_heating_temperature_setpoint_2",
+          "zone_air_cooling_temperature_setpoint_3": "zone_air_cooling_temperature_setpoint_3",
+          "zone_air_heating_temperature_setpoint_3": "zone_air_heating_temperature_setpoint_3",
+          "zone_air_cooling_temperature_setpoint_4": "zone_air_cooling_temperature_setpoint_4",
+          "zone_air_heating_temperature_setpoint_4": "zone_air_heating_temperature_setpoint_4",
+          "zone_air_cooling_temperature_setpoint_5": "zone_air_cooling_temperature_setpoint_5",
+          "zone_air_heating_temperature_setpoint_5": "zone_air_heating_temperature_setpoint_5",
+          "zone_air_cooling_temperature_setpoint_6": "zone_air_cooling_temperature_setpoint_6",
+          "zone_air_heating_temperature_setpoint_6": "zone_air_heating_temperature_setpoint_6",
+          "zone_air_cooling_temperature_setpoint_7": "zone_air_cooling_temperature_setpoint_7",
+          "zone_air_heating_temperature_setpoint_7": "zone_air_heating_temperature_setpoint_7",
+          "zone_air_cooling_temperature_setpoint_8": "zone_air_cooling_temperature_setpoint_8",
+          "zone_air_heating_temperature_setpoint_8": "zone_air_heating_temperature_setpoint_8",
+          "zone_air_cooling_temperature_setpoint_9": "zone_air_cooling_temperature_setpoint_9",
+          "zone_air_heating_temperature_setpoint_9": "zone_air_heating_temperature_setpoint_9",
+          "zone_air_cooling_temperature_setpoint_10": "zone_air_cooling_temperature_setpoint_10",
+          "zone_air_heating_temperature_setpoint_10": "zone_air_heating_temperature_setpoint_10",
+          "zone_air_cooling_temperature_setpoint_11": "zone_air_cooling_temperature_setpoint_11",
+          "zone_air_heating_temperature_setpoint_11": "zone_air_heating_temperature_setpoint_11",
+          "zone_air_cooling_temperature_setpoint_12": "zone_air_cooling_temperature_setpoint_12",
+          "zone_air_heating_temperature_setpoint_12": "zone_air_heating_temperature_setpoint_12",
+          "zone_air_cooling_temperature_setpoint_13": "zone_air_cooling_temperature_setpoint_13",
+          "zone_air_heating_temperature_setpoint_13": "zone_air_heating_temperature_setpoint_13",
+          "zone_air_cooling_temperature_setpoint_14": "zone_air_cooling_temperature_setpoint_14",
+          "zone_air_heating_temperature_setpoint_14": "zone_air_heating_temperature_setpoint_14"
+        }
+      },
+      "missing_telemetry_fields": [
+        "run_command",
+        "run_status",
+        "zone_air_temperature_sensor"
+      ]
+    }
+  }
+}

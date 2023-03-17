@@ -1,0 +1,426 @@
+{
+  "timestamp": "2023-03-01T19:00:02.139599+00:00",
+  "version": "1.4.0",
+  "entities": {
+    "ebe40a2e-b753-4883-8c2b-52a675b77191": {
+      "type": "FACILITIES/BUILDING",
+      "code": "US-SVL-TC2-CLEAN"
+    },
+    "803b0b95-c128-444b-9694-c747f6250293": {
+      "connections": {
+        "ebe40a2e-b753-4883-8c2b-52a675b77191": [
+          "CONTAINS"
+        ]
+      },
+      "type": "HVAC/AHU_CHW2XSC_ECON_ED_EFSS2X_EFVSC2X_HWSC_SFSS2X_SFVSC2X_SHM_RHM_SARC_SFM_SSPC_ZSPC_RSPC_RFC",
+      "code": "ahu__1414244001135101978",
+      "translation": {
+        "discharge_air_flowrate_sensor": {
+          "present_value": "data.analog-input_34.present-value",
+          "units": {
+            "key": "data.analog-input_34.present-value",
+            "values": {
+              "cubic_feet_per_minute": "cubic_feet_per_minute"
+            }
+          }
+        },
+        "discharge_air_temperature_sensor_1": {
+          "present_value": "data.analog-input_24.present-value",
+          "units": {
+            "key": "data.analog-input_24.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "discharge_air_temperature_sensor_2": {
+          "present_value": "data.analog-output_12.present-value",
+          "units": {
+            "key": "data.analog-output_12.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "mixed_air_temperature_sensor": {
+          "present_value": "data.analog-input_25.present-value",
+          "units": {
+            "key": "data.analog-input_25.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "outside_air_flowrate_sensor": {
+          "present_value": "data.analog-output_17.present-value",
+          "units": {
+            "key": "data.analog-output_17.present-value",
+            "values": {
+              "cubic_feet_per_minute": "cubic_feet_per_minute"
+            }
+          }
+        },
+        "outside_air_flowrate_setpoint_1": {
+          "present_value": "data.analog-input_57.present-value",
+          "units": {
+            "key": "data.analog-input_57.present-value",
+            "values": {
+              "cubic_feet_per_minute": "cubic_feet_per_minute"
+            }
+          }
+        },
+        "outside_air_flowrate_setpoint_2": {
+          "present_value": "data.analog-output_16.present-value",
+          "units": {
+            "key": "data.analog-output_16.present-value",
+            "values": {
+              "cubic_feet_per_minute": "cubic_feet_per_minute"
+            }
+          }
+        },
+        "outside_air_temperature_sensor_1": {
+          "present_value": "data.analog-input_18.present-value",
+          "units": {
+            "key": "data.analog-input_18.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "outside_air_temperature_sensor_2": {
+          "present_value": "data.analog-input_19.present-value",
+          "units": {
+            "key": "data.analog-input_19.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "outside_air_temperature_sensor_3": {
+          "present_value": "data.analog-output_14.present-value",
+          "units": {
+            "key": "data.analog-output_14.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "refrigerant_discharge_temperature_sensor_1": {
+          "present_value": "data.analog-input_36.present-value",
+          "units": {
+            "key": "data.analog-input_36.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "refrigerant_discharge_temperature_sensor_10": {
+          "present_value": "data.analog-input_37.present-value",
+          "units": {
+            "key": "data.analog-input_37.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "refrigerant_discharge_temperature_sensor_11": {
+          "present_value": "data.analog-input_38.present-value",
+          "units": {
+            "key": "data.analog-input_38.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "refrigerant_discharge_temperature_sensor_12": {
+          "present_value": "data.analog-input_39.present-value",
+          "units": {
+            "key": "data.analog-input_39.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "refrigerant_discharge_temperature_sensor_13": {
+          "present_value": "data.analog-input_36.present-value",
+          "units": {
+            "key": "data.analog-input_36.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "refrigerant_discharge_temperature_sensor_14": {
+          "present_value": "data.analog-input_37.present-value",
+          "units": {
+            "key": "data.analog-input_37.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "refrigerant_discharge_temperature_sensor_15": {
+          "present_value": "data.analog-input_38.present-value",
+          "units": {
+            "key": "data.analog-input_38.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "refrigerant_discharge_temperature_sensor_16": {
+          "present_value": "data.analog-input_39.present-value",
+          "units": {
+            "key": "data.analog-input_39.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "refrigerant_discharge_temperature_sensor_2": {
+          "present_value": "data.analog-input_37.present-value",
+          "units": {
+            "key": "data.analog-input_37.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "refrigerant_discharge_temperature_sensor_3": {
+          "present_value": "data.analog-input_38.present-value",
+          "units": {
+            "key": "data.analog-input_38.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "refrigerant_discharge_temperature_sensor_4": {
+          "present_value": "data.analog-input_39.present-value",
+          "units": {
+            "key": "data.analog-input_39.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "refrigerant_discharge_temperature_sensor_5": {
+          "present_value": "data.analog-input_36.present-value",
+          "units": {
+            "key": "data.analog-input_36.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "refrigerant_discharge_temperature_sensor_6": {
+          "present_value": "data.analog-input_37.present-value",
+          "units": {
+            "key": "data.analog-input_37.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "refrigerant_discharge_temperature_sensor_7": {
+          "present_value": "data.analog-input_38.present-value",
+          "units": {
+            "key": "data.analog-input_38.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "refrigerant_discharge_temperature_sensor_8": {
+          "present_value": "data.analog-input_39.present-value",
+          "units": {
+            "key": "data.analog-input_39.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "refrigerant_discharge_temperature_sensor_9": {
+          "present_value": "data.analog-input_36.present-value",
+          "units": {
+            "key": "data.analog-input_36.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "supply_air_static_pressure_sensor": {
+          "present_value": "data.analog-input_29.present-value",
+          "units": {
+            "key": "data.analog-input_29.present-value",
+            "values": {
+              "inches_of_water": "inches_of_water"
+            }
+          }
+        },
+        "supply_air_static_pressure_setpoint": {
+          "present_value": "data.analog-input_48.present-value",
+          "units": {
+            "key": "data.analog-input_48.present-value",
+            "values": {
+              "inches_of_water": "inches_of_water"
+            }
+          }
+        },
+        "supply_air_temperature_setpoint": {
+          "present_value": "data.analog-input_52.present-value",
+          "units": {
+            "key": "data.analog-input_52.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "zone_air_cooling_temperature_setpoint": {
+          "present_value": "data.analog-output_6.present-value",
+          "units": {
+            "key": "data.analog-output_6.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "zone_air_static_pressure_sensor_1": {
+          "present_value": "data.analog-input_31.present-value",
+          "units": {
+            "key": "data.analog-input_31.present-value",
+            "values": {
+              "inches_of_water": "inches_of_water"
+            }
+          }
+        },
+        "zone_air_static_pressure_sensor_2": {
+          "present_value": "data.analog-output_10.present-value",
+          "units": {
+            "key": "data.analog-output_10.present-value",
+            "values": {
+              "inches_of_water": "inches_of_water"
+            }
+          }
+        },
+        "zone_air_static_pressure_setpoint": {
+          "present_value": "data.analog-output_9.present-value",
+          "units": {
+            "key": "data.analog-output_9.present-value",
+            "values": {
+              "inches_of_water": "inches_of_water"
+            }
+          }
+        },
+        "zone_air_temperature_sensor_1": {
+          "present_value": "data.analog-input_15.present-value",
+          "units": {
+            "key": "data.analog-input_15.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "zone_air_temperature_sensor_2": {
+          "present_value": "data.analog-input_87.present-value",
+          "units": {
+            "key": "data.analog-input_87.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "zone_air_temperature_sensor_3": {
+          "present_value": "data.analog-output_11.present-value",
+          "units": {
+            "key": "data.analog-output_11.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "zone_air_temperature_setpoint_1": {
+          "present_value": "data.analog-input_13.present-value",
+          "units": {
+            "key": "data.analog-input_13.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "zone_air_temperature_setpoint_2": {
+          "present_value": "data.analog-input_50.present-value",
+          "units": {
+            "key": "data.analog-input_50.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "zone_air_temperature_setpoint_3": {
+          "present_value": "data.analog-input_78.present-value",
+          "units": {
+            "key": "data.analog-input_78.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "zone_air_temperature_setpoint_4": {
+          "present_value": "data.analog-output_2.present-value",
+          "units": {
+            "key": "data.analog-output_2.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "zone_air_unoccupied_cooling_temperature_setpoint": {
+          "present_value": "data.analog-output_31.present-value",
+          "units": {
+            "key": "data.analog-output_31.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "zone_air_unoccupied_heating_temperature_setpoint": {
+          "present_value": "data.analog-output_32.present-value",
+          "units": {
+            "key": "data.analog-output_32.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        }
+      },
+      "cloud_device_id": "14",
+      "missing_telemetry_fields": [
+        "chilled_water_valve_percentage_command",
+        "return_air_flowrate_sensor",
+        "supply_fan_run_command",
+        "supply_air_temperature_sensor",
+        "exhaust_fan_speed_percentage_command",
+        "exhaust_fan_run_command",
+        "heating_water_valve_percentage_command",
+        "exhaust_air_damper_percentage_command",
+        "supply_air_flowrate_sensor",
+        "return_air_flowrate_setpoint",
+        "exhaust_air_flowrate_setpoint",
+        "pressurization_request_count",
+        "return_air_temperature_sensor",
+        "exhaust_air_flowrate_sensor",
+        "return_air_static_pressure_setpoint",
+        "exhaust_fan_run_status",
+        "return_air_relative_humidity_sensor",
+        "cooling_request_count",
+        "supply_air_relative_humidity_sensor",
+        "outside_air_damper_percentage_command",
+        "supply_fan_speed_percentage_command",
+        "return_air_static_pressure_sensor",
+        "supply_fan_run_status",
+        "economizer_mode"
+      ]
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "timestamp": "2023-03-01T19:00:02.139599+00:00",
+  "version": "1.4.0",
+  "entities": {
+    "ebe40a2e-b753-4883-8c2b-52a675b77191": {
+      "type": "FACILITIES/BUILDING",
+      "code": "US-SVL-TC2-CLEAN"
+    },
+    "69704627-d455-4103-8562-f6721fe25944": {
+      "connections": {
+        "ebe40a2e-b753-4883-8c2b-52a675b77191": [
+          "CONTAINS"
+        ]
+      },
+      "type": "HVAC/AHU_DFSS_DXZC_ECONM",
+      "code": "US-SVL-TC2-CLEAN.AHU.ahu__2121",
+      "translation": {},
+      "links": {
+        "ahu__11": {
+          "return_air_temperature_sensor": "return_air_temperature_sensor_2",
+          "zone_air_temperature_sensor": "zone_air_temperature_sensor_1",
+          "supply_air_temperature_sensor": "supply_air_temperature_sensor_2"
+        }
+      },
+      "missing_telemetry_fields": [
+        "compressor_run_status",
+        "compressor_run_command",
+        "outside_air_temperature_sensor",
+        "outside_air_damper_percentage_command",
+        "discharge_fan_run_status",
+        "discharge_fan_run_command",
+        "mixed_air_temperature_setpoint",
+        "zone_air_cooling_temperature_setpoint",
+        "mixed_air_temperature_sensor",
+        "economizer_mode"
+      ]
+    }
+  }
+}

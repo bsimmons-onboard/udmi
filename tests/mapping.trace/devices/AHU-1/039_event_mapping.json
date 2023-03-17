@@ -1,0 +1,32 @@
+{
+  "timestamp": "2023-03-01T19:00:02.139599+00:00",
+  "version": "1.4.0",
+  "entities": {
+    "ebe40a2e-b753-4883-8c2b-52a675b77191": {
+      "type": "FACILITIES/BUILDING",
+      "code": "US-SVL-TC2-CLEAN"
+    },
+    "60815974-ab59-4fb6-9695-3101f755c6ab": {
+      "connections": {
+        "ebe40a2e-b753-4883-8c2b-52a675b77191": [
+          "CONTAINS"
+        ]
+      },
+      "type": "HVAC/VLV_CHWVM_RTM_DTM",
+      "code": "US-SVL-TC2-CLEAN.AHU.ahu__0909",
+      "translation": {},
+      "links": {
+        "ahu__0202": {
+          "return_air_temperature_sensor_1": "return_air_temperature_sensor_4",
+          "return_air_temperature_sensor_2": "return_air_temperature_sensor_12",
+          "return_air_temperature_sensor_3": "return_air_temperature_sensor_20"
+        }
+      },
+      "missing_telemetry_fields": [
+        "discharge_air_temperature_sensor",
+        "chilled_water_valve_percentage_sensor",
+        "chilled_water_valve_percentage_command"
+      ]
+    }
+  }
+}

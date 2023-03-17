@@ -1,0 +1,46 @@
+{
+  "timestamp": "2023-03-01T19:00:02.139599+00:00",
+  "version": "1.4.0",
+  "entities": {
+    "ebe40a2e-b753-4883-8c2b-52a675b77191": {
+      "type": "FACILITIES/BUILDING",
+      "code": "US-SVL-TC2-CLEAN"
+    },
+    "6fa4ecb1-fc10-4ba9-a0f0-a59f9315aba3": {
+      "connections": {
+        "ebe40a2e-b753-4883-8c2b-52a675b77191": [
+          "CONTAINS"
+        ]
+      },
+      "type": "HVAC/AHU_DFSS_DXZC_ECOND_EFSS_HTSC",
+      "code": "US-SVL-TC2-CLEAN.VAV.vav__1111214001135101669",
+      "translation": {},
+      "links": {
+        "ahu__1111214001135101669": {
+          "zone_air_temperature_setpoint": "zone_air_temperature_setpoint_1",
+          "discharge_air_temperature_sensor_1": "discharge_air_temperature_sensor_1",
+          "supply_air_temperature_setpoint": "supply_air_temperature_setpoint",
+          "discharge_air_temperature_sensor_2": "discharge_air_temperature_sensor_2",
+          "zone_air_unoccupied_cooling_temperature_setpoint": "zone_air_unoccupied_cooling_temperature_setpoint",
+          "zone_air_unoccupied_heating_temperature_setpoint": "zone_air_unoccupied_heating_temperature_setpoint",
+          "zone_air_cooling_temperature_setpoint": "zone_air_cooling_temperature_setpoint"
+        }
+      },
+      "missing_telemetry_fields": [
+        "compressor_run_status",
+        "exhaust_fan_run_status",
+        "exhaust_fan_run_command",
+        "outside_air_temperature_sensor",
+        "discharge_air_temperature_setpoint",
+        "zone_air_temperature_sensor",
+        "compressor_run_command",
+        "discharge_fan_run_status",
+        "outside_air_damper_percentage_command",
+        "discharge_fan_run_command",
+        "heater_run_command",
+        "economizer_mode",
+        "supply_air_temperature_sensor"
+      ]
+    }
+  }
+}

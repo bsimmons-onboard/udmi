@@ -1,0 +1,58 @@
+{
+  "timestamp": "2023-03-01T19:00:02.139599+00:00",
+  "version": "1.4.0",
+  "entities": {
+    "ebe40a2e-b753-4883-8c2b-52a675b77191": {
+      "type": "FACILITIES/BUILDING",
+      "code": "US-SVL-TC2-CLEAN"
+    },
+    "ad634d96-cfa4-404f-93d0-b8796abebb87": {
+      "connections": {
+        "ebe40a2e-b753-4883-8c2b-52a675b77191": [
+          "CONTAINS"
+        ]
+      },
+      "type": "ELECTRICAL/UPS_IOBM_PPWM_UPSBM",
+      "code": "US-SVL-TC2-CLEAN.PMP.hotWaterPump__2121",
+      "translation": {},
+      "links": {
+        "hotWaterPlant__11": {
+          "line_current_sensor": "line_current_sensor_2",
+          "speed_percentage_command": "speed_percentage_command_2",
+          "line_frequency_sensor": "line_frequency_sensor_1"
+        }
+      },
+      "missing_telemetry_fields": [
+        "remaining_charge_time_sensor",
+        "battery_status",
+        "output_phase2_phase3_voltage_sensor",
+        "battery_voltage_sensor",
+        "input_phase3_neutral_voltage_sensor",
+        "phase3_apparent_power_sensor",
+        "input_phase1_phase2_voltage_sensor",
+        "output_phase1_current_sensor",
+        "input_phase1_current_sensor",
+        "input_phase2_phase3_voltage_sensor",
+        "input_supply_mode",
+        "input_phase2_current_sensor",
+        "phase1_apparent_power_sensor",
+        "input_phase3_current_sensor",
+        "output_phase3_neutral_voltage_sensor",
+        "output_phase1_neutral_voltage_sensor",
+        "output_phase3_current_sensor",
+        "output_phase2_neutral_voltage_sensor",
+        "bypass_phase3_neutral_voltage_sensor",
+        "output_phase1_phase2_voltage_sensor",
+        "output_phase2_current_sensor",
+        "phase2_apparent_power_sensor",
+        "bypass_phase2_neutral_voltage_sensor",
+        "input_phase2_neutral_voltage_sensor",
+        "battery_test_status",
+        "output_phase3_phase1_voltage_sensor",
+        "input_phase3_phase1_voltage_sensor",
+        "input_phase1_neutral_voltage_sensor",
+        "bypass_phase1_neutral_voltage_sensor"
+      ]
+    }
+  }
+}

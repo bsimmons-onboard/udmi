@@ -1,0 +1,59 @@
+{
+  "timestamp": "2023-03-01T19:00:02.139599+00:00",
+  "version": "1.4.0",
+  "entities": {
+    "ebe40a2e-b753-4883-8c2b-52a675b77191": {
+      "type": "FACILITIES/BUILDING",
+      "code": "US-SVL-TC2-CLEAN"
+    },
+    "2bedb7a1-d25c-4e9b-a933-0f7893bcfd62": {
+      "connections": {
+        "ebe40a2e-b753-4883-8c2b-52a675b77191": [
+          "CONTAINS"
+        ]
+      },
+      "type": "HVAC/AHU_DFSS_DX2ZC_ECONZ_CO2C_DSP_RCKTM2X_HTZC_CC2XM_RTM_DTM",
+      "code": "US-SVL-TC2-CLEAN.CH.chiller__22",
+      "translation": {},
+      "links": {
+        "ahu__1414244001135101978": {
+          "refrigerant_discharge_temperature_sensor_1": "refrigerant_discharge_temperature_sensor_2",
+          "refrigerant_discharge_temperature_sensor_2": "refrigerant_discharge_temperature_sensor_4",
+          "refrigerant_discharge_temperature_sensor_3": "refrigerant_discharge_temperature_sensor_6",
+          "refrigerant_discharge_temperature_sensor_4": "refrigerant_discharge_temperature_sensor_8",
+          "refrigerant_discharge_temperature_sensor_5": "refrigerant_discharge_temperature_sensor_10",
+          "refrigerant_discharge_temperature_sensor_6": "refrigerant_discharge_temperature_sensor_12",
+          "refrigerant_discharge_temperature_sensor_7": "refrigerant_discharge_temperature_sensor_14",
+          "refrigerant_discharge_temperature_sensor_8": "refrigerant_discharge_temperature_sensor_16"
+        }
+      },
+      "missing_telemetry_fields": [
+        "zone_air_heating_temperature_setpoint",
+        "refrigerant_liquid_temperature_sensor",
+        "compressor_run_status",
+        "outside_air_temperature_sensor",
+        "zone_air_temperature_sensor",
+        "discharge_fan_run_status",
+        "refrigerant_suction_pressure_sensor",
+        "zone_air_co2_concentration_sensor",
+        "heater_run_command",
+        "zone_air_co2_concentration_setpoint",
+        "refrigerant_suction_saturation_temperature_sensor",
+        "compressor_current_sensor",
+        "refrigerant_liquid_saturation_temperature_sensor",
+        "refrigerant_suction_temperature_sensor",
+        "compressor_run_command",
+        "refrigerant_liquid_pressure_sensor",
+        "outside_air_damper_percentage_command",
+        "refrigerant_subcooling_temperature_sensor",
+        "discharge_fan_run_command",
+        "refrigerant_suction_superheat_temperature_sensor",
+        "zone_air_cooling_temperature_setpoint",
+        "return_air_temperature_sensor",
+        "discharge_air_temperature_sensor",
+        "economizer_mode",
+        "refrigerant_discharge_pressure_sensor"
+      ]
+    }
+  }
+}

@@ -1,0 +1,589 @@
+{
+  "timestamp": "2023-03-01T19:00:02.139599+00:00",
+  "version": "1.4.0",
+  "entities": {
+    "ebe40a2e-b753-4883-8c2b-52a675b77191": {
+      "type": "FACILITIES/BUILDING",
+      "code": "US-SVL-TC2-CLEAN"
+    },
+    "055b36d9-75f5-4d13-95b6-af2bdffd3733": {
+      "connections": {
+        "ebe40a2e-b753-4883-8c2b-52a675b77191": [
+          "CONTAINS"
+        ]
+      },
+      "type": "HVAC/AHU_DFFC_ZTC_CHWZTC_HWZTC_ECONZ_DTM_RTM_CO2C_FDPM_AHAC",
+      "code": "ahu__0303",
+      "translation": {
+        "heating_supply_water_temperature_sensor_1": {
+          "present_value": "data.analog-input_114.present-value",
+          "units": {
+            "key": "data.analog-input_114.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "heating_supply_water_temperature_sensor_2": {
+          "present_value": "data.analog-input_115.present-value",
+          "units": {
+            "key": "data.analog-input_115.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "heating_supply_water_temperature_sensor_3": {
+          "present_value": "data.analog-input_120.present-value",
+          "units": {
+            "key": "data.analog-input_120.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "heating_supply_water_temperature_sensor_4": {
+          "present_value": "data.analog-input_123.present-value",
+          "units": {
+            "key": "data.analog-input_123.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "outside_air_temperature_sensor": {
+          "present_value": "data.analog-input_6.present-value",
+          "units": {
+            "key": "data.analog-input_6.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "return_air_temperature_sensor_1": {
+          "present_value": "data.analog-input_102.present-value",
+          "units": {
+            "key": "data.analog-input_102.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "return_air_temperature_sensor_2": {
+          "present_value": "data.analog-input_107.present-value",
+          "units": {
+            "key": "data.analog-input_107.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "return_air_temperature_sensor_3": {
+          "present_value": "data.analog-input_98.present-value",
+          "units": {
+            "key": "data.analog-input_98.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "return_air_temperature_sensor_4": {
+          "present_value": "data.analog-input_102.present-value",
+          "units": {
+            "key": "data.analog-input_102.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "return_air_temperature_sensor_5": {
+          "present_value": "data.analog-input_107.present-value",
+          "units": {
+            "key": "data.analog-input_107.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "return_air_temperature_sensor_6": {
+          "present_value": "data.analog-input_98.present-value",
+          "units": {
+            "key": "data.analog-input_98.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "return_air_temperature_sensor_7": {
+          "present_value": "data.analog-input_102.present-value",
+          "units": {
+            "key": "data.analog-input_102.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "return_air_temperature_sensor_8": {
+          "present_value": "data.analog-input_107.present-value",
+          "units": {
+            "key": "data.analog-input_107.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "return_air_temperature_sensor_9": {
+          "present_value": "data.analog-input_98.present-value",
+          "units": {
+            "key": "data.analog-input_98.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "runtime_counter_1": {
+          "present_value": "data.analog-input_12.present-value",
+          "units": {
+            "key": "data.analog-input_12.present-value",
+            "values": {
+              "hours": "hours"
+            }
+          }
+        },
+        "runtime_counter_10": {
+          "present_value": "data.analog-input_59.present-value",
+          "units": {
+            "key": "data.analog-input_59.present-value",
+            "values": {
+              "minutes": "minutes"
+            }
+          }
+        },
+        "runtime_counter_11": {
+          "present_value": "data.analog-input_50.present-value",
+          "units": {
+            "key": "data.analog-input_50.present-value",
+            "values": {
+              "minutes": "minutes"
+            }
+          }
+        },
+        "runtime_counter_12": {
+          "present_value": "data.analog-input_51.present-value",
+          "units": {
+            "key": "data.analog-input_51.present-value",
+            "values": {
+              "minutes": "minutes"
+            }
+          }
+        },
+        "runtime_counter_13": {
+          "present_value": "data.analog-input_56.present-value",
+          "units": {
+            "key": "data.analog-input_56.present-value",
+            "values": {
+              "minutes": "minutes"
+            }
+          }
+        },
+        "runtime_counter_14": {
+          "present_value": "data.analog-input_59.present-value",
+          "units": {
+            "key": "data.analog-input_59.present-value",
+            "values": {
+              "minutes": "minutes"
+            }
+          }
+        },
+        "runtime_counter_2": {
+          "present_value": "data.analog-input_50.present-value",
+          "units": {
+            "key": "data.analog-input_50.present-value",
+            "values": {
+              "minutes": "minutes"
+            }
+          }
+        },
+        "runtime_counter_3": {
+          "present_value": "data.analog-input_51.present-value",
+          "units": {
+            "key": "data.analog-input_51.present-value",
+            "values": {
+              "minutes": "minutes"
+            }
+          }
+        },
+        "runtime_counter_4": {
+          "present_value": "data.analog-input_56.present-value",
+          "units": {
+            "key": "data.analog-input_56.present-value",
+            "values": {
+              "minutes": "minutes"
+            }
+          }
+        },
+        "runtime_counter_5": {
+          "present_value": "data.analog-input_59.present-value",
+          "units": {
+            "key": "data.analog-input_59.present-value",
+            "values": {
+              "minutes": "minutes"
+            }
+          }
+        },
+        "runtime_counter_6": {
+          "present_value": "data.analog-value_11.present-value",
+          "units": {
+            "key": "data.analog-value_11.present-value",
+            "values": {
+              "hours": "hours"
+            }
+          }
+        },
+        "runtime_counter_7": {
+          "present_value": "data.analog-input_50.present-value",
+          "units": {
+            "key": "data.analog-input_50.present-value",
+            "values": {
+              "minutes": "minutes"
+            }
+          }
+        },
+        "runtime_counter_8": {
+          "present_value": "data.analog-input_51.present-value",
+          "units": {
+            "key": "data.analog-input_51.present-value",
+            "values": {
+              "minutes": "minutes"
+            }
+          }
+        },
+        "runtime_counter_9": {
+          "present_value": "data.analog-input_56.present-value",
+          "units": {
+            "key": "data.analog-input_56.present-value",
+            "values": {
+              "minutes": "minutes"
+            }
+          }
+        },
+        "speed_percentage_command_1": {
+          "present_value": "data.analog-input_2.present-value",
+          "units": {
+            "key": "data.analog-input_2.present-value",
+            "values": {
+              "percent": "percent"
+            }
+          }
+        },
+        "speed_percentage_command_2": {
+          "present_value": "data.analog-input_130.present-value",
+          "units": {
+            "key": "data.analog-input_130.present-value",
+            "values": {
+              "percent": "percent"
+            }
+          }
+        },
+        "speed_percentage_command_3": {
+          "present_value": "data.analog-input_131.present-value",
+          "units": {
+            "key": "data.analog-input_131.present-value",
+            "values": {
+              "percent": "percent"
+            }
+          }
+        },
+        "speed_percentage_command_4": {
+          "present_value": "data.analog-input_136.present-value",
+          "units": {
+            "key": "data.analog-input_136.present-value",
+            "values": {
+              "percent": "percent"
+            }
+          }
+        },
+        "speed_percentage_command_5": {
+          "present_value": "data.analog-input_139.present-value",
+          "units": {
+            "key": "data.analog-input_139.present-value",
+            "values": {
+              "percent": "percent"
+            }
+          }
+        },
+        "supply_air_temperature_sensor_1": {
+          "present_value": "data.analog-input_4.present-value",
+          "units": {
+            "key": "data.analog-input_4.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "supply_air_temperature_sensor_10": {
+          "present_value": "data.analog-input_81.present-value",
+          "units": {
+            "key": "data.analog-input_81.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "supply_air_temperature_sensor_11": {
+          "present_value": "data.analog-input_84.present-value",
+          "units": {
+            "key": "data.analog-input_84.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "supply_air_temperature_sensor_12": {
+          "present_value": "data.analog-input_86.present-value",
+          "units": {
+            "key": "data.analog-input_86.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "supply_air_temperature_sensor_13": {
+          "present_value": "data.analog-input_92.present-value",
+          "units": {
+            "key": "data.analog-input_92.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "supply_air_temperature_sensor_14": {
+          "present_value": "data.analog-input_93.present-value",
+          "units": {
+            "key": "data.analog-input_93.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "supply_air_temperature_sensor_15": {
+          "present_value": "data.analog-input_94.present-value",
+          "units": {
+            "key": "data.analog-input_94.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "supply_air_temperature_sensor_16": {
+          "present_value": "data.analog-input_80.present-value",
+          "units": {
+            "key": "data.analog-input_80.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "supply_air_temperature_sensor_17": {
+          "present_value": "data.analog-input_81.present-value",
+          "units": {
+            "key": "data.analog-input_81.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "supply_air_temperature_sensor_18": {
+          "present_value": "data.analog-input_84.present-value",
+          "units": {
+            "key": "data.analog-input_84.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "supply_air_temperature_sensor_19": {
+          "present_value": "data.analog-input_86.present-value",
+          "units": {
+            "key": "data.analog-input_86.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "supply_air_temperature_sensor_2": {
+          "present_value": "data.analog-input_80.present-value",
+          "units": {
+            "key": "data.analog-input_80.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "supply_air_temperature_sensor_20": {
+          "present_value": "data.analog-input_92.present-value",
+          "units": {
+            "key": "data.analog-input_92.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "supply_air_temperature_sensor_21": {
+          "present_value": "data.analog-input_93.present-value",
+          "units": {
+            "key": "data.analog-input_93.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "supply_air_temperature_sensor_22": {
+          "present_value": "data.analog-input_94.present-value",
+          "units": {
+            "key": "data.analog-input_94.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "supply_air_temperature_sensor_3": {
+          "present_value": "data.analog-input_81.present-value",
+          "units": {
+            "key": "data.analog-input_81.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "supply_air_temperature_sensor_4": {
+          "present_value": "data.analog-input_84.present-value",
+          "units": {
+            "key": "data.analog-input_84.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "supply_air_temperature_sensor_5": {
+          "present_value": "data.analog-input_86.present-value",
+          "units": {
+            "key": "data.analog-input_86.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "supply_air_temperature_sensor_6": {
+          "present_value": "data.analog-input_92.present-value",
+          "units": {
+            "key": "data.analog-input_92.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "supply_air_temperature_sensor_7": {
+          "present_value": "data.analog-input_93.present-value",
+          "units": {
+            "key": "data.analog-input_93.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "supply_air_temperature_sensor_8": {
+          "present_value": "data.analog-input_94.present-value",
+          "units": {
+            "key": "data.analog-input_94.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "supply_air_temperature_sensor_9": {
+          "present_value": "data.analog-input_80.present-value",
+          "units": {
+            "key": "data.analog-input_80.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "zone_air_temperature_sensor_1": {
+          "present_value": "data.analog-input_3.present-value",
+          "units": {
+            "key": "data.analog-input_3.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "zone_air_temperature_sensor_2": {
+          "present_value": "data.analog-value_4.present-value",
+          "units": {
+            "key": "data.analog-value_4.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "zone_air_temperature_sensor_3": {
+          "present_value": "data.analog-value_6.present-value",
+          "units": {
+            "key": "data.analog-value_6.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "zone_air_temperature_sensor_4": {
+          "present_value": "data.analog-value_7.present-value",
+          "units": {
+            "key": "data.analog-value_7.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "zone_air_temperature_setpoint_1": {
+          "present_value": "data.analog-value_2.present-value",
+          "units": {
+            "key": "data.analog-value_2.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "zone_air_temperature_setpoint_2": {
+          "present_value": "data.analog-value_3.present-value",
+          "units": {
+            "key": "data.analog-value_3.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        }
+      },
+      "cloud_device_id": "21",
+      "missing_telemetry_fields": [
+        "zone_occupancy_status",
+        "heating_water_valve_percentage_command",
+        "discharge_fan_run_status",
+        "chilled_water_valve_percentage_command",
+        "outside_air_damper_percentage_command",
+        "discharge_air_flowrate_setpoint",
+        "zone_air_co2_concentration_sensor",
+        "discharge_fan_run_command",
+        "discharge_air_flowrate_sensor",
+        "user_occupancy_override_status",
+        "zone_air_cooling_temperature_setpoint",
+        "filter_differential_pressure_sensor",
+        "zone_air_co2_concentration_setpoint",
+        "discharge_air_temperature_sensor",
+        "economizer_mode",
+        "discharge_fan_speed_percentage_command"
+      ]
+    }
+  }
+}

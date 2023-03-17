@@ -1,0 +1,45 @@
+{
+  "timestamp": "2023-03-01T18:27:24.545600+00:00",
+  "version": "1.4.0",
+  "entities": {
+    "ebe40a2e-b753-4883-8c2b-52a675b77191": {
+      "type": "FACILITIES/BUILDING",
+      "code": "US-SVL-TC2-CLEAN"
+    },
+    "bb4cfc63-c2a0-4f9a-bf9d-c8b5ed21e545": {
+      "connections": {
+        "ebe40a2e-b753-4883-8c2b-52a675b77191": [
+          "CONTAINS"
+        ]
+      },
+      "type": "HVAC/CH_SS_SCHWTC_RWISOVPM",
+      "code": "elecMeter__Water_Main",
+      "translation": {
+        "run_status": {
+          "present_value": "data.Device Status.present-value",
+          "states": {
+            "ON": "active",
+            "OFF": "inactive"
+          }
+        },
+        "water_volume_accumulator": {
+          "present_value": "data.WaterFlowTotal.present-value",
+          "units": {
+            "key": "data.WaterFlowTotal.present-value",
+            "values": {
+              "us_gallons": "us_gallons"
+            }
+          }
+        }
+      },
+      "cloud_device_id": "Water_Main",
+      "missing_telemetry_fields": [
+        "return_water_isolation_valve_percentage_command",
+        "run_command",
+        "return_water_isolation_valve_percentage_sensor",
+        "supply_water_temperature_setpoint",
+        "supply_water_temperature_sensor"
+      ]
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "timestamp": "2023-03-01T19:00:02.139599+00:00",
+  "version": "1.4.0",
+  "entities": {
+    "ebe40a2e-b753-4883-8c2b-52a675b77191": {
+      "type": "FACILITIES/BUILDING",
+      "code": "US-SVL-TC2-CLEAN"
+    },
+    "609a28d8-eba0-41dc-9931-5c047b4211bb": {
+      "connections": {
+        "ebe40a2e-b753-4883-8c2b-52a675b77191": [
+          "CONTAINS"
+        ]
+      },
+      "type": "HVAC/MAU_SFSS_STM",
+      "code": "US-SVL-TC2-CLEAN.VAV.vav__1616",
+      "translation": {},
+      "links": {
+        "ahu__0202": {
+          "supply_air_temperature_sensor_1": "supply_air_temperature_sensor_5",
+          "supply_air_temperature_sensor_2": "supply_air_temperature_sensor_10",
+          "supply_air_temperature_sensor_3": "supply_air_temperature_sensor_16"
+        }
+      },
+      "missing_telemetry_fields": [
+        "supply_fan_run_status",
+        "supply_fan_run_command"
+      ]
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "timestamp": "2023-03-01T19:00:02.139599+00:00",
+  "version": "1.4.0",
+  "entities": {
+    "ebe40a2e-b753-4883-8c2b-52a675b77191": {
+      "type": "FACILITIES/BUILDING",
+      "code": "US-SVL-TC2-CLEAN"
+    },
+    "62170978-fbb5-47ce-912b-7a455ce1be83": {
+      "connections": {
+        "ebe40a2e-b753-4883-8c2b-52a675b77191": [
+          "CONTAINS"
+        ]
+      },
+      "type": "HVAC/FCU_RTM_DXZTC_SRC",
+      "code": "US-SVL-TC2-CLEAN.AHU.ahu__2222",
+      "translation": {},
+      "links": {
+        "ahu__0101": {
+          "return_air_temperature_sensor": "return_air_temperature_sensor_7",
+          "zone_air_temperature_sensor": "zone_air_temperature_sensor_3"
+        }
+      },
+      "missing_telemetry_fields": [
+        "compressor_run_status",
+        "compressor_run_command",
+        "filter_alarm",
+        "lost_power_alarm",
+        "zone_air_temperature_setpoint",
+        "schedule_run_command"
+      ]
+    }
+  }
+}

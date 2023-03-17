@@ -1,0 +1,40 @@
+{
+  "timestamp": "2023-03-01T19:00:02.139599+00:00",
+  "version": "1.4.0",
+  "entities": {
+    "ebe40a2e-b753-4883-8c2b-52a675b77191": {
+      "type": "FACILITIES/BUILDING",
+      "code": "US-SVL-TC2-CLEAN"
+    },
+    "a4503573-ab6f-4769-9ba8-4463c22cdacf": {
+      "connections": {
+        "ebe40a2e-b753-4883-8c2b-52a675b77191": [
+          "CONTAINS"
+        ]
+      },
+      "type": "HVAC/CT_SS_VSC_SWTC_SWISOVPM_RWISOVPM_MWVPM",
+      "code": "US-SVL-TC2-CLEAN.BLR.hotWaterBoiler__0808",
+      "translation": {},
+      "links": {
+        "ahu__0101": {
+          "runtime_counter_1": "runtime_counter_2",
+          "runtime_counter_2": "runtime_counter_6",
+          "heating_supply_water_temperature_sensor": "heating_supply_water_temperature_sensor_2",
+          "speed_percentage_command": "speed_percentage_command_3",
+          "runtime_counter_3": "runtime_counter_10"
+        }
+      },
+      "missing_telemetry_fields": [
+        "run_status",
+        "return_water_isolation_valve_percentage_command",
+        "supply_water_isolation_valve_percentage_command",
+        "supply_water_isolation_valve_percentage_sensor",
+        "run_command",
+        "supply_water_temperature_setpoint",
+        "return_water_isolation_valve_percentage_sensor",
+        "makeup_water_valve_percentage_command",
+        "supply_water_temperature_sensor"
+      ]
+    }
+  }
+}

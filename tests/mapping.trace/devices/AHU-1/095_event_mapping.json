@@ -1,0 +1,80 @@
+{
+  "timestamp": "2023-03-01T19:00:02.139599+00:00",
+  "version": "1.4.0",
+  "entities": {
+    "ebe40a2e-b753-4883-8c2b-52a675b77191": {
+      "type": "FACILITIES/BUILDING",
+      "code": "US-SVL-TC2-CLEAN"
+    },
+    "4066c1e1-21a1-4fe2-9a95-9a9e1930ec6b": {
+      "connections": {
+        "ebe40a2e-b753-4883-8c2b-52a675b77191": [
+          "CONTAINS"
+        ]
+      },
+      "type": "HVAC/VAV_ZTC_DTM",
+      "code": "fcu__11",
+      "translation": {
+        "zone_air_temperature_setpoint_1": {
+          "present_value": "data.analog-value_1.present-value",
+          "units": {
+            "key": "data.analog-value_1.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "zone_air_temperature_setpoint_2": {
+          "present_value": "data.analog-value_2.present-value",
+          "units": {
+            "key": "data.analog-value_2.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "zone_air_temperature_setpoint_3": {
+          "present_value": "data.analog-value_3.present-value",
+          "units": {
+            "key": "data.analog-value_3.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "zone_air_temperature_setpoint_4": {
+          "present_value": "data.analog-value_4.present-value",
+          "units": {
+            "key": "data.analog-value_4.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "zone_air_temperature_setpoint_5": {
+          "present_value": "data.analog-value_5.present-value",
+          "units": {
+            "key": "data.analog-value_5.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "zone_air_temperature_setpoint_6": {
+          "present_value": "data.analog-value_6.present-value",
+          "units": {
+            "key": "data.analog-value_6.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        }
+      },
+      "cloud_device_id": "3102728",
+      "missing_telemetry_fields": [
+        "zone_air_temperature_sensor",
+        "discharge_air_temperature_sensor"
+      ]
+    }
+  }
+}

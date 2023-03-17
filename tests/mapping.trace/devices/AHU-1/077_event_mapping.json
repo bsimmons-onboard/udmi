@@ -1,0 +1,38 @@
+{
+  "timestamp": "2023-03-01T19:00:02.139599+00:00",
+  "version": "1.4.0",
+  "entities": {
+    "ebe40a2e-b753-4883-8c2b-52a675b77191": {
+      "type": "FACILITIES/BUILDING",
+      "code": "US-SVL-TC2-CLEAN"
+    },
+    "6d0c364b-98ed-4d84-8858-acf8308528c6": {
+      "connections": {
+        "ebe40a2e-b753-4883-8c2b-52a675b77191": [
+          "CONTAINS"
+        ]
+      },
+      "type": "HVAC/DFR_SFSS_BYPSSPC_HT2SC_RTM",
+      "code": "US-SVL-TC2-CLEAN.AHU.ahu__1111",
+      "translation": {},
+      "links": {
+        "ahu__11": {
+          "return_air_temperature_sensor_1": "return_air_temperature_sensor_1",
+          "return_air_temperature_sensor_2": "return_air_temperature_sensor_3",
+          "return_air_temperature_sensor_3": "return_air_temperature_sensor_4",
+          "supply_air_temperature_sensor": "supply_air_temperature_sensor_1",
+          "runtime_counter": "runtime_counter"
+        }
+      },
+      "missing_telemetry_fields": [
+        "supply_air_temperature_setpoint",
+        "supply_air_static_pressure_setpoint",
+        "heater_run_command",
+        "supply_fan_run_status",
+        "supply_air_static_pressure_sensor",
+        "supply_fan_run_command",
+        "bypass_air_damper_percentage_command"
+      ]
+    }
+  }
+}

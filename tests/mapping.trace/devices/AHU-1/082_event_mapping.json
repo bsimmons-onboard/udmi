@@ -1,0 +1,54 @@
+{
+  "timestamp": "2023-03-01T19:00:02.139599+00:00",
+  "version": "1.4.0",
+  "entities": {
+    "ebe40a2e-b753-4883-8c2b-52a675b77191": {
+      "type": "FACILITIES/BUILDING",
+      "code": "US-SVL-TC2-CLEAN"
+    },
+    "ce8e14f4-5c29-47bc-b36b-c67d9d823340": {
+      "connections": {
+        "ebe40a2e-b753-4883-8c2b-52a675b77191": [
+          "CONTAINS"
+        ]
+      },
+      "type": "HVAC/AHU_DFVSC_ZTC_RTM_DTM_HPZTC_CWDT_CO2C_OAFC_FDPM_AHAC",
+      "code": "US-SVL-TC2-CLEAN.VAV.vav__2121",
+      "translation": {},
+      "links": {
+        "ahu__0303": {
+          "runtime_counter_1": "runtime_counter_1",
+          "speed_percentage_command": "speed_percentage_command_1",
+          "zone_air_temperature_sensor_1": "zone_air_temperature_sensor_1",
+          "supply_air_temperature_sensor": "supply_air_temperature_sensor_1",
+          "runtime_counter_2": "runtime_counter_6",
+          "zone_air_temperature_setpoint_1": "zone_air_temperature_setpoint_1",
+          "zone_air_temperature_setpoint_2": "zone_air_temperature_setpoint_2",
+          "zone_air_temperature_sensor_2": "zone_air_temperature_sensor_2",
+          "zone_air_temperature_sensor_3": "zone_air_temperature_sensor_3",
+          "zone_air_temperature_sensor_4": "zone_air_temperature_sensor_4"
+        }
+      },
+      "missing_telemetry_fields": [
+        "compressor_run_status",
+        "outside_air_flowrate_sensor",
+        "condensing_return_water_temperature_sensor",
+        "compressor_run_command",
+        "zone_occupancy_status",
+        "discharge_fan_run_status",
+        "outside_air_damper_percentage_command",
+        "filter_differential_pressure_sensor",
+        "zone_air_co2_concentration_sensor",
+        "discharge_fan_speed_percentage_command",
+        "discharge_fan_run_command",
+        "zone_air_co2_concentration_setpoint",
+        "user_occupancy_override_status",
+        "condensing_supply_water_temperature_sensor",
+        "reversing_valve_command",
+        "return_air_temperature_sensor",
+        "discharge_air_temperature_sensor",
+        "outside_air_flowrate_setpoint"
+      ]
+    }
+  }
+}

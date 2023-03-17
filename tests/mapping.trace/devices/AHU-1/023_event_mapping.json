@@ -1,0 +1,33 @@
+{
+  "timestamp": "2023-03-01T19:00:02.139599+00:00",
+  "version": "1.4.0",
+  "entities": {
+    "ebe40a2e-b753-4883-8c2b-52a675b77191": {
+      "type": "FACILITIES/BUILDING",
+      "code": "US-SVL-TC2-CLEAN"
+    },
+    "d5edf709-2a1d-49e4-8251-c8b63808ef25": {
+      "connections": {
+        "ebe40a2e-b753-4883-8c2b-52a675b77191": [
+          "CONTAINS"
+        ]
+      },
+      "type": "HVAC/FAN_SS_CSP_VSC",
+      "code": "US-SVL-TC2-CLEAN.SENSOR.site__hp34",
+      "translation": {},
+      "links": {
+        "heatPump__hp34": {
+          "zone_air_occupied_cooling_temperature_sepoint": "zone_air_occupied_cooling_temperature_sepoint",
+          "speed_percentage_command": "speed_percentage_command",
+          "zone_air_occupied_heating_temperature_setpoint": "zone_air_occupied_heating_temperature_setpoint",
+          "zone_air_cooling_temperature_setpoint": "zone_air_cooling_temperature_setpoint"
+        }
+      },
+      "missing_telemetry_fields": [
+        "run_command",
+        "run_status",
+        "zone_air_temperature_sensor"
+      ]
+    }
+  }
+}

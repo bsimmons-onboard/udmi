@@ -1,0 +1,39 @@
+{
+  "timestamp": "2023-03-01T19:00:02.139599+00:00",
+  "version": "1.4.0",
+  "entities": {
+    "ebe40a2e-b753-4883-8c2b-52a675b77191": {
+      "type": "FACILITIES/BUILDING",
+      "code": "US-SVL-TC2-CLEAN"
+    },
+    "ef141947-b749-4803-b8e7-ec5792f32163": {
+      "connections": {
+        "ebe40a2e-b753-4883-8c2b-52a675b77191": [
+          "CONTAINS"
+        ]
+      },
+      "type": "HVAC/AHU_CHWZTC_DFSS_ECONZ_HWZTC_ZTC",
+      "code": "US-SVL-TC2-CLEAN.SENSOR.site__1313234001135102034",
+      "translation": {},
+      "links": {
+        "ahu__1313234001135102034": {
+          "zone_air_temperature_sensor_1": "zone_air_temperature_sensor_1",
+          "outside_air_temperature_sensor_1": "outside_air_temperature_sensor_1",
+          "outside_air_temperature_sensor_2": "outside_air_temperature_sensor_2",
+          "zone_air_temperature_setpoint": "zone_air_temperature_setpoint_3",
+          "zone_air_temperature_sensor_2": "zone_air_temperature_sensor_2",
+          "outside_air_temperature_sensor_3": "outside_air_temperature_sensor_3"
+        }
+      },
+      "missing_telemetry_fields": [
+        "heating_water_valve_percentage_command",
+        "discharge_fan_run_status",
+        "outside_air_damper_percentage_command",
+        "chilled_water_valve_percentage_command",
+        "discharge_fan_run_command",
+        "zone_air_cooling_temperature_setpoint",
+        "economizer_mode"
+      ]
+    }
+  }
+}

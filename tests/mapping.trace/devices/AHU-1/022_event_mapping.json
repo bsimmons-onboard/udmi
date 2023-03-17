@@ -1,0 +1,67 @@
+{
+  "timestamp": "2023-03-01T19:00:02.139599+00:00",
+  "version": "1.4.0",
+  "entities": {
+    "ebe40a2e-b753-4883-8c2b-52a675b77191": {
+      "type": "FACILITIES/BUILDING",
+      "code": "US-SVL-TC2-CLEAN"
+    },
+    "98793e2f-900e-447f-888d-ac47cc9b5d8f": {
+      "connections": {
+        "ebe40a2e-b753-4883-8c2b-52a675b77191": [
+          "CONTAINS"
+        ]
+      },
+      "type": "METERS/GM_PULSE",
+      "code": "gasMeter__Gas_Main",
+      "translation": {
+        "gas_flowrate_sensor": {
+          "present_value": "data.GasFlowRate_Unscaled.present-value",
+          "units": {
+            "key": "data.GasFlowRate_Unscaled.present-value",
+            "values": {
+              "cubic_feet_per_minute": "cubic_feet_per_minute"
+            }
+          }
+        },
+        "gas_volume_accumulator_1": {
+          "present_value": "data.GasFlowRate.present-value",
+          "units": {
+            "key": "data.GasFlowRate.present-value",
+            "values": {
+              "therms": "therms"
+            }
+          }
+        },
+        "gas_volume_accumulator_2": {
+          "present_value": "data.GasFlowTotal.present-value",
+          "units": {
+            "key": "data.GasFlowTotal.present-value",
+            "values": {
+              "therms": "therms"
+            }
+          }
+        },
+        "gas_volume_accumulator_3": {
+          "present_value": "data.GasFlowTotal_Unscaled.present-value",
+          "units": {
+            "key": "data.GasFlowTotal_Unscaled.present-value",
+            "values": {
+              "cubic_feet": "cubic-feet"
+            }
+          }
+        },
+        "outside_air_temperature_sensor": {
+          "present_value": "data.Temperature.present-value",
+          "units": {
+            "key": "data.Temperature.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        }
+      },
+      "cloud_device_id": "Gas_Main"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "timestamp": "2023-03-01T19:00:02.139599+00:00",
+  "version": "1.4.0",
+  "entities": {
+    "ebe40a2e-b753-4883-8c2b-52a675b77191": {
+      "type": "FACILITIES/BUILDING",
+      "code": "US-SVL-TC2-CLEAN"
+    },
+    "59e41fc5-531e-482b-beb7-0c8bf554864c": {
+      "connections": {
+        "ebe40a2e-b753-4883-8c2b-52a675b77191": [
+          "CONTAINS"
+        ]
+      },
+      "type": "HVAC/WEATHER_OA",
+      "code": "US-SVL-TC2-CLEAN.SENSOR.site__2222",
+      "translation": {},
+      "links": {
+        "ahu__0101": {
+          "outside_air_temperature_sensor": "outside_air_temperature_sensor"
+        }
+      }
+    }
+  }
+}

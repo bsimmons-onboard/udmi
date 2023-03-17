@@ -1,0 +1,25 @@
+{
+  "timestamp": "2023-03-01T19:00:02.139599+00:00",
+  "version": "1.4.0",
+  "entities": {
+    "ebe40a2e-b753-4883-8c2b-52a675b77191": {
+      "type": "FACILITIES/BUILDING",
+      "code": "US-SVL-TC2-CLEAN"
+    },
+    "30082e1f-c22d-4bf1-a82c-cfd5722561c3": {
+      "connections": {
+        "ebe40a2e-b753-4883-8c2b-52a675b77191": [
+          "CONTAINS"
+        ]
+      },
+      "type": "HVAC/SENSOR_ZHM",
+      "code": "US-SVL-TC2-CLEAN.VAV.vav__33",
+      "translation": {},
+      "links": {
+        "site__33": {
+          "zone_air_relative_humidity_sensor": "zone_air_relative_humidity_sensor"
+        }
+      }
+    }
+  }
+}

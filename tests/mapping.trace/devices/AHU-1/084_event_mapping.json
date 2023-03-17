@@ -1,0 +1,149 @@
+{
+  "timestamp": "2023-03-01T19:00:02.139599+00:00",
+  "version": "1.4.0",
+  "entities": {
+    "ebe40a2e-b753-4883-8c2b-52a675b77191": {
+      "type": "FACILITIES/BUILDING",
+      "code": "US-SVL-TC2-CLEAN"
+    },
+    "51273c3c-3083-44ec-8ab3-693e3f64ed9d": {
+      "connections": {
+        "ebe40a2e-b753-4883-8c2b-52a675b77191": [
+          "CONTAINS"
+        ]
+      },
+      "type": "HVAC/AHU_DFVSC_ZTC_RTM_DTM_HPZTC_CWDT_CO2C_OAFC_FDPM_AHAC",
+      "code": "site__33",
+      "translation": {
+        "discharge_air_temperature_sensor_1": {
+          "present_value": "data.analog-value_10.present-value",
+          "units": {
+            "key": "data.analog-value_10.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "discharge_air_temperature_sensor_2": {
+          "present_value": "data.analog-value_17.present-value",
+          "units": {
+            "key": "data.analog-value_17.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "discharge_air_temperature_sensor_3": {
+          "present_value": "data.analog-value_26.present-value",
+          "units": {
+            "key": "data.analog-value_26.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "discharge_air_temperature_sensor_4": {
+          "present_value": "data.analog-value_35.present-value",
+          "units": {
+            "key": "data.analog-value_35.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "outside_air_specificenthalpy_sensor": {
+          "present_value": "data.analog-value_1303.present-value",
+          "units": {
+            "key": "data.analog-value_1303.present-value",
+            "values": {
+              "btus_per_pound_dry_air": "btus_per_pound_dry_air"
+            }
+          }
+        },
+        "outside_air_wetbulb_temperature_sensor": {
+          "present_value": "data.analog-value_1305.present-value",
+          "units": {
+            "key": "data.analog-value_1305.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "return_air_temperature_sensor_1": {
+          "present_value": "data.analog-value_16.present-value",
+          "units": {
+            "key": "data.analog-value_16.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "return_air_temperature_sensor_2": {
+          "present_value": "data.analog-value_23.present-value",
+          "units": {
+            "key": "data.analog-value_23.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "return_air_temperature_sensor_3": {
+          "present_value": "data.analog-value_32.present-value",
+          "units": {
+            "key": "data.analog-value_32.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "return_air_temperature_sensor_4": {
+          "present_value": "data.analog-value_41.present-value",
+          "units": {
+            "key": "data.analog-value_41.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        },
+        "zone_air_relative_humidity_sensor": {
+          "present_value": "data.analog-value_1302.present-value",
+          "units": {
+            "key": "data.analog-value_1302.present-value",
+            "values": {
+              "percent": "percent"
+            }
+          }
+        },
+        "zone_air_temperature_sensor": {
+          "present_value": "data.analog-value_1301.present-value",
+          "units": {
+            "key": "data.analog-value_1301.present-value",
+            "values": {
+              "degrees_fahrenheit": "degrees_fahrenheit"
+            }
+          }
+        }
+      },
+      "cloud_device_id": "3100004",
+      "missing_telemetry_fields": [
+        "compressor_run_status",
+        "outside_air_flowrate_sensor",
+        "condensing_return_water_temperature_sensor",
+        "compressor_run_command",
+        "zone_occupancy_status",
+        "discharge_fan_run_status",
+        "outside_air_damper_percentage_command",
+        "filter_differential_pressure_sensor",
+        "zone_air_co2_concentration_sensor",
+        "discharge_fan_speed_percentage_command",
+        "zone_air_temperature_setpoint",
+        "zone_air_co2_concentration_setpoint",
+        "discharge_fan_run_command",
+        "user_occupancy_override_status",
+        "condensing_supply_water_temperature_sensor",
+        "reversing_valve_command",
+        "outside_air_flowrate_setpoint"
+      ]
+    }
+  }
+}
