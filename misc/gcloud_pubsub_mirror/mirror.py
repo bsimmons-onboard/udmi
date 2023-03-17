@@ -94,8 +94,6 @@ def file_reader(message_generator, callback):
   publish_time = message['publish_time'].replace('Z', '')
   obj.publish_time = datetime.datetime.fromisoformat(publish_time)
   obj.attributes = message['attributes']
-  obj.attributes['subType'] = 'event';
-  obj.attributes['subFolder'] = 'mapping';
   obj.ack = noop_ack
   callback(obj)
 
