@@ -14,16 +14,21 @@ import udmi.schema.Envelope.SubFolder;
 import udmi.schema.Envelope.SubType;
 import udmi.schema.SystemState;
 
-public class MessageHandlerDelegate implements MessageHandler {
+/**
+ * Delegation class to handle semantically typed message processing. Uses the Java type for an
+ * object to distribute appropriately to various incoming handlers, and also to construct the
+ * appropriate outgoing types.
+ */
+class MessageHandlerDelegate implements MessageHandler {
+
   private final Map<String, HandlerConsumer<Object>> handlers = new HashMap<>();
   private final BiMap<String, Class<?>> typeClasses = HashBiMap.create();
   private final Map<Class<?>, SimpleEntry<SubType, SubFolder>> classTypes = new HashMap<>();
   private final MessagePublisher publisher;
 
-  public MessageHandlerDelegate(MessagePublisher publisher) {
+  MessageHandlerDelegate(MessagePublisher publisher) {
     this.publisher = publisher;
     initializeHandlerTypes();
-
   }
 
   @Override
