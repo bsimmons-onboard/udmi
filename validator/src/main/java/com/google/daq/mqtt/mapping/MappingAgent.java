@@ -42,7 +42,7 @@ public class MappingAgent extends MappingBase {
     new MappingAgent().activate(args);
   }
 
-  private void activate(String[] args) {
+  void activate(String[] args) {
     mappingEngineId = "_mapping_engine";
     initialize("agent", args, handlers);
     initializeSink();

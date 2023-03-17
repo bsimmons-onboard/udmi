@@ -18,7 +18,7 @@ abstract class MappingBase {
 
   private String projectId;
   SiteModel siteModel;
-  private MessageHandler client;
+  MessageHandler client;
   private String discoveryNodeId;
   String mappingEngineId;
   private String selfId;
@@ -68,17 +68,16 @@ abstract class MappingBase {
     checkNotNull(siteModel, "site model not defined");
     siteModel.initialize();
     registryId = checkNotNull(siteModel.getRegistryId(), "site model registry_id null");
-    String projectId = checkNotNull(this.projectId, "project id not defined");
     String pubsubSubscription = "mapping-" + flavor;
     String subscription = checkNotNull(pubsubSubscription, "subscription not defined");
     String useUpdateTopic = checkNotNull(
         Optional.ofNullable(updateTopic).orElseGet(siteModel::getUpdateTopic),
         "site model update_topic null");
-    client = getMessageClient(projectId, subscription, useUpdateTopic);
+    client = getMessageClient(subscription, useUpdateTopic);
     handlers.forEach(this::registerHandler);
   }
 
-  private MessageHandler getMessageClient(String projectId, String subscription,
+  private MessageHandler getMessageClient(String subscription,
       String useUpdateTopic) {
     return traceFile == null
         ? new PubSubClient(projectId, registryId, subscription, useUpdateTopic, false)
