@@ -4,9 +4,11 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.udmi.util.Common.removeNextArg;
 
 import com.google.common.base.Joiner;
+import com.google.daq.mqtt.util.MessageHandler;
 import com.google.daq.mqtt.util.MessageHandler.HandlerConsumer;
 import com.google.daq.mqtt.util.MessageHandler.HandlerSpecification;
 import com.google.daq.mqtt.util.PubSubClient;
+import com.google.daq.mqtt.validator.MessageReadingClient;
 import com.google.udmi.util.SiteModel;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,11 +18,13 @@ abstract class MappingBase {
 
   private String projectId;
   SiteModel siteModel;
-  private PubSubClient client;
+  private MessageHandler client;
   private String discoveryNodeId;
   String mappingEngineId;
   private String selfId;
   private String updateTopic;
+  private String traceFile;
+  private String registryId;
 
   private void processArgs(String[] args) {
     ArrayList<String> argList = new ArrayList<>(List.of(args));
@@ -43,6 +47,9 @@ abstract class MappingBase {
           case "-e":
             mappingEngineId = removeNextArg(argList);
             break;
+          case "-r":
+            traceFile = removeNextArg(argList);
+            break;
           case "--":
             remainingArgs(argList);
             return;
@@ -58,17 +65,24 @@ abstract class MappingBase {
   void initialize(String flavor, String[] args, List<HandlerSpecification> handlers) {
     selfId = "_mapping_" + flavor;
     processArgs(args);
-    siteModel.initialize();
     checkNotNull(siteModel, "site model not defined");
-    String registryId = checkNotNull(siteModel.getRegistryId(), "site model registry_id null");
-    String useUpdateTopic = checkNotNull(
-        Optional.ofNullable(updateTopic).orElseGet(siteModel::getUpdateTopic),
-        "site model update_topic null");
+    siteModel.initialize();
+    registryId = checkNotNull(siteModel.getRegistryId(), "site model registry_id null");
     String projectId = checkNotNull(this.projectId, "project id not defined");
     String pubsubSubscription = "mapping-" + flavor;
     String subscription = checkNotNull(pubsubSubscription, "subscription not defined");
-    client = new PubSubClient(projectId, registryId, subscription, updateTopic, false);
+    String useUpdateTopic = checkNotNull(
+        Optional.ofNullable(updateTopic).orElseGet(siteModel::getUpdateTopic),
+        "site model update_topic null");
+    client = getMessageClient(projectId, subscription, useUpdateTopic);
     handlers.forEach(this::registerHandler);
+  }
+
+  private MessageHandler getMessageClient(String projectId, String subscription,
+      String useUpdateTopic) {
+    return traceFile == null
+        ? new PubSubClient(projectId, registryId, subscription, useUpdateTopic, false)
+        : new MessageReadingClient(registryId, traceFile);
   }
 
   void remainingArgs(List<String> argList) {
