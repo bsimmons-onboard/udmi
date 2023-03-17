@@ -12,6 +12,7 @@ import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.util.Map;
 import java.util.TreeMap;
+import udmi.schema.Envelope.SubFolder;
 
 /**
  * Create a data sink that writes to local files.
@@ -60,12 +61,12 @@ public class FileDataSink implements MessagePublisher {
   }
 
   private boolean isValidation(String topic) {
-    return topic.startsWith("validation/");
+    return topic.endsWith("/" + SubFolder.VALIDATION.value());
   }
 
   private File getOutputFile(String deviceId, String topic) {
     String[] parts = topic.split("/");
-    return getOutputFile(deviceId, parts[1], parts[0], JSON_SUFFIX);
+    return getOutputFile(deviceId, parts[0], parts[1], JSON_SUFFIX);
   }
 
   private File getOutputFile(String deviceId, String subType, String subFolder, String suffix) {
