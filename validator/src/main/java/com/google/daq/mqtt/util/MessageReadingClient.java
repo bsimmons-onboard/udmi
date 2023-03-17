@@ -46,7 +46,7 @@ public class MessageReadingClient implements MessagePublisher, MessageHandler {
   private final Map<String, String> deviceNextTimestamp = new HashMap<>();
   private final Map<String, String> deviceLastTimestamp = new HashMap<>();
   private final List<OutputBundle> outputMessages = new ArrayList<>();
-  int messageCount;
+  public int messageCount;
   private boolean isActive;
   private String lastValidTimestamp;
   private MessageHandler messageHandler;
@@ -151,7 +151,7 @@ public class MessageReadingClient implements MessagePublisher, MessageHandler {
     }
   }
 
-  List<OutputBundle> getOutputMessages() {
+  public List<OutputBundle> getOutputMessages() {
     return outputMessages;
   }
 
@@ -216,7 +216,10 @@ public class MessageReadingClient implements MessagePublisher, MessageHandler {
     messageHandler.publishMessage(deviceId, message);
   }
 
-  static class OutputBundle {
+  /**
+   * Bundle used for capturing output messages sent to an input-only client (primarily for test).
+   */
+  public static class OutputBundle {
 
     public String deviceId;
     public String topic;

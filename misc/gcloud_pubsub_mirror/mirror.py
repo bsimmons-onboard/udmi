@@ -18,11 +18,12 @@ from google.cloud import pubsub_v1
 messages_processed = 0
 messages = False
 publish_futures = []
+tests_index = 0
 
 def is_trace_project(target: str) -> bool:
   return target == '//'
 
-def is_trace_project(target: str) -> bool:
+def is_tests_project(target: str) -> bool:
   return target == '++'
 
 def subscribe_callback(message: pubsub_v1.subscriber.message.Message) -> None:
@@ -50,7 +51,21 @@ def topic_publisher(pubsub_sink, topic, message):
   publish_futures.append(publish_future)
 
 def tests_publisher(path: str, message):
-  raise 'not yet implemented'
+  global tests_index
+  tests_index += 1
+  os.makedirs(path, exist_ok = True)
+
+  subType = message.attributes.get('subType') or 'event'
+  subFolder = message.attributes.get('subFolder') or 'unknown'
+  file_name = '%s/%03d_%s_%s.json' % (path, tests_index, subType, subFolder)
+
+  print('Writing tests file ' + file_name)
+  message_obj = json.loads(message.data.decode('utf-8'))
+  with open(file_name, 'w', encoding='utf-8') as outfile:
+    outfile.write(json.dumps(message_obj, indent=2))
+
+  if tests_index >= 100:
+    raise Exception('Stopping test output after %d messages' % (tests_index))
 
 def trace_publisher(path: str, message):
   fullstamp = message.publish_time.isoformat() + 'Z'
@@ -67,12 +82,12 @@ def trace_publisher(path: str, message):
     'attributes': dict(message.attributes)
   }
 
-  print('Writing ' + file_name)
+  print('Writing trace file ' + file_name)
   with open(file_name, 'w', encoding='utf-8') as outfile:
     outfile.write(json.dumps(message_dict, indent=2))
 
 def load_tests(path: str):
-  raise 'not yet implemented'
+  raise Exception('tests loader not yet implemented')
 
 def load_traces(path: str):
   print('Processing ' + path)
