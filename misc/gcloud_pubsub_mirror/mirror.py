@@ -55,9 +55,9 @@ def tests_publisher(path: str, message):
   tests_index += 1
   os.makedirs(path, exist_ok = True)
 
-  subType = message.attributes.get('subType') or 'event'
-  subFolder = message.attributes.get('subFolder') or 'mapping'
-  file_name = '%s/%03d_%s_%s.json' % (path, tests_index, subType, subFolder)
+  sub_type = message.attributes.get('subType') or 'event'
+  sub_folder = message.attributes.get('subFolder') or 'mapping'
+  file_name = f'%{path}/{tests_index:03}_{sub_type}_{sub_folder}.json'
 
   print('Writing tests file ' + file_name)
   message_obj = json.loads(message.data.decode('utf-8'))
@@ -65,7 +65,7 @@ def tests_publisher(path: str, message):
     outfile.write(json.dumps(message_obj, indent=2))
 
   if tests_index >= 100:
-    raise Exception('Stopping test output after %d messages' % (tests_index))
+    raise Exception(f'Stopping test output after %{tests_index} messages')
 
 def trace_publisher(path: str, message):
   fullstamp = message.publish_time.isoformat() + 'Z'
