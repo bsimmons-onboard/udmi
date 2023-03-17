@@ -19,8 +19,11 @@ messages_processed = 0
 messages = False
 publish_futures = []
 
-def is_file_project(target: str) -> bool:
+def is_trace_project(target: str) -> bool:
   return target == '//'
+
+def is_trace_project(target: str) -> bool:
+  return target == '++'
 
 def subscribe_callback(message: pubsub_v1.subscriber.message.Message) -> None:
   global messages_processed
@@ -46,7 +49,10 @@ def topic_publisher(pubsub_sink, topic, message):
   publish_future.add_done_callback(get_publish_callback())
   publish_futures.append(publish_future)
 
-def file_publisher(path: str, message):
+def tests_publisher(path: str, message):
+  raise 'not yet implemented'
+
+def trace_publisher(path: str, message):
   fullstamp = message.publish_time.isoformat() + 'Z'
   timestamp = fullstamp.replace('+00:00Z', 'Z').replace('000Z', 'Z')
   timepath = timestamp[0: timestamp.rindex(':')].replace(':', '/')
@@ -65,7 +71,10 @@ def file_publisher(path: str, message):
   with open(file_name, 'w', encoding='utf-8') as outfile:
     outfile.write(json.dumps(message_dict, indent=2))
 
-def load_messages(path: str):
+def load_tests(path: str):
+  raise 'not yet implemented'
+
+def load_traces(path: str):
   print('Processing ' + path)
   if os.path.isfile(path):
     with open(path, 'r', encoding='utf-8') as json_file:
@@ -73,7 +82,7 @@ def load_messages(path: str):
   elif os.path.isdir(path):
     dirs = sorted(os.listdir(path))
     for subdir in dirs:
-      yield from load_messages(path + '/' + subdir)
+      yield from load_traces(path + '/' + subdir)
   else:
     raise Exception('Unknown file ' + path)
 
@@ -83,7 +92,7 @@ class Message:
 def noop_ack():
   pass
 
-def file_reader(message_generator, callback):
+def message_reader(message_generator, callback):
   global has_messages
   message = next(message_generator, None)
   if not message:
@@ -115,9 +124,11 @@ except Exception as e:
   print(e)
   sys.exit()
 
-if is_file_project(args.source_project):
-  messages = load_messages(args.source_subscription)
-  get_messages = partial(file_reader, messages, subscribe_callback)
+is_trace = is_trace_project(args.source_project)
+if is_trace or is_tests_project(args.source_project):
+  source = args.source_subscription
+  messages = load_traces(source) if is_trace else load_tests(source)
+  get_messages = partial(message_reader, messages, subscribe_callback)
   future = None
   has_messages = True
 else:
@@ -129,8 +140,10 @@ else:
   get_messages = partial(future.result, timeout=10)
   has_messages = True
 
-if is_file_project(args.target_project):
-  publish = partial(file_publisher, args.target_topic)
+if is_trace_project(args.target_project):
+  publish = partial(trace_publisher, args.target_topic)
+elif is_tests_project(args.target_project):
+  publish = partial(tests_publisher, args.target_topic)
 else:
   publisher = pubsub_v1.PublisherClient(credentials=credentials)
   topic_path = publisher.topic_path(args.target_project, args.target_topic)
