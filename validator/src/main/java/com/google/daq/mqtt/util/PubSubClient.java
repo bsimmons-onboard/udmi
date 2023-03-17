@@ -13,8 +13,6 @@ import com.google.cloud.pubsub.v1.MessageReceiver;
 import com.google.cloud.pubsub.v1.Publisher;
 import com.google.cloud.pubsub.v1.Subscriber;
 import com.google.cloud.pubsub.v1.SubscriptionAdminClient;
-import com.google.common.collect.BiMap;
-import com.google.common.collect.HashBiMap;
 import com.google.daq.mqtt.validator.Validator;
 import com.google.daq.mqtt.validator.Validator.ErrorContainer;
 import com.google.daq.mqtt.validator.Validator.MessageBundle;
@@ -24,10 +22,7 @@ import com.google.pubsub.v1.ProjectSubscriptionName;
 import com.google.pubsub.v1.ProjectTopicName;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.SeekRequest;
-import com.google.udmi.util.Common;
 import com.google.udmi.util.JsonUtil;
-import java.util.AbstractMap.SimpleEntry;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
@@ -35,10 +30,8 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.BiConsumer;
-import udmi.schema.Envelope;
 import udmi.schema.Envelope.SubFolder;
 import udmi.schema.Envelope.SubType;
-import udmi.schema.SystemState;
 
 /**
  * Message publisher that uses PubSub.

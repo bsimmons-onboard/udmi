@@ -39,6 +39,7 @@ import com.google.daq.mqtt.util.ExceptionMap;
 import com.google.daq.mqtt.util.ExceptionMap.ErrorTree;
 import com.google.daq.mqtt.util.FileDataSink;
 import com.google.daq.mqtt.util.MessagePublisher;
+import com.google.daq.mqtt.util.MessageReadingClient;
 import com.google.daq.mqtt.util.MessageUpgrader;
 import com.google.daq.mqtt.util.PubSubClient;
 import com.google.daq.mqtt.util.ValidationException;

@@ -1,4 +1,4 @@
-package com.google.daq.mqtt.validator;
+package com.google.daq.mqtt.util;
 
 import static com.google.udmi.util.Common.SUBFOLDER_PROPERTY_KEY;
 import static com.google.udmi.util.Common.SUBTYPE_PROPERTY_KEY;
@@ -8,8 +8,6 @@ import com.fasterxml.jackson.core.JsonParser.Feature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.util.ISO8601DateFormat;
-import com.google.daq.mqtt.util.MessageHandler;
-import com.google.daq.mqtt.util.MessagePublisher;
 import com.google.daq.mqtt.validator.Validator.ErrorContainer;
 import com.google.daq.mqtt.validator.Validator.MessageBundle;
 import java.io.File;
@@ -51,6 +49,7 @@ public class MessageReadingClient implements MessagePublisher, MessageHandler {
   int messageCount;
   private boolean isActive;
   private String lastValidTimestamp;
+  private MessageHandler messageHandler;
 
   /**
    * Create a new client.
@@ -66,6 +65,7 @@ public class MessageReadingClient implements MessagePublisher, MessageHandler {
     }
     File devicesDir = new File(messageDir, "devices");
     Arrays.stream(Objects.requireNonNull(devicesDir.list())).forEach(this::prepDevice);
+    messageHandler = new MessageHandlerDelegate(this);
   }
 
   private void prepDevice(String deviceId) {
@@ -171,7 +171,7 @@ public class MessageReadingClient implements MessagePublisher, MessageHandler {
   }
 
   @Override
-  public Validator.MessageBundle takeNextMessage() {
+  public MessageBundle takeNextMessage() {
     final String deviceId = getNextDevice();
     final Map<String, Object> message = deviceMessages.remove(deviceId);
     final Map<String, String> attributes = deviceAttributes.remove(deviceId);
@@ -203,17 +203,17 @@ public class MessageReadingClient implements MessagePublisher, MessageHandler {
 
   @Override
   public <T> void registerHandler(Class<T> targetClass, HandlerConsumer<T> handlerConsumer) {
-    throw new RuntimeException("Not yet implemented");
+    messageHandler.registerHandler(targetClass, handlerConsumer);
   }
 
   @Override
   public void messageLoop() {
-    throw new RuntimeException("Not yet implemented");
+    messageHandler.messageLoop();
   }
 
   @Override
   public void publishMessage(String deviceId, Object message) {
-    throw new RuntimeException("Not yet implemented");
+    messageHandler.publishMessage(deviceId, message);
   }
 
   static class OutputBundle {

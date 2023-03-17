@@ -5,7 +5,8 @@ import static org.junit.Assert.assertNull;
 import static udmi.schema.Level.INFO;
 
 import com.google.daq.mqtt.TestCommon;
-import com.google.daq.mqtt.validator.MessageReadingClient.OutputBundle;
+import com.google.daq.mqtt.util.MessageReadingClient;
+import com.google.daq.mqtt.util.MessageReadingClient.OutputBundle;
 import com.google.udmi.util.JsonUtil;
 import com.google.udmi.util.SiteModel;
 import java.util.ArrayList;
