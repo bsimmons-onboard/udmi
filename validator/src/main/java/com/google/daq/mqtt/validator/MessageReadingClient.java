@@ -1,7 +1,5 @@
 package com.google.daq.mqtt.validator;
 
-import static com.google.udmi.util.Common.EXCEPTION_KEY;
-import static com.google.udmi.util.Common.MESSAGE_KEY;
 import static com.google.udmi.util.Common.SUBFOLDER_PROPERTY_KEY;
 import static com.google.udmi.util.Common.SUBTYPE_PROPERTY_KEY;
 
@@ -10,6 +8,7 @@ import com.fasterxml.jackson.core.JsonParser.Feature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.util.ISO8601DateFormat;
+import com.google.daq.mqtt.util.MessageHandler;
 import com.google.daq.mqtt.util.MessagePublisher;
 import com.google.daq.mqtt.validator.Validator.ErrorContainer;
 import com.google.daq.mqtt.validator.Validator.MessageBundle;
@@ -28,7 +27,7 @@ import java.util.stream.Collectors;
 /**
  * Client to read messages from a directory of captured messages.
  */
-public class MessageReadingClient implements MessagePublisher {
+public class MessageReadingClient implements MessagePublisher, MessageHandler {
 
   private static final String PLAYBACK_PROJECT_ID = "playback-project";
   private static final ObjectMapper OBJECT_MAPPER =
@@ -200,6 +199,21 @@ public class MessageReadingClient implements MessagePublisher {
       }
     }
     return nextDevice;
+  }
+
+  @Override
+  public <T> void registerHandler(Class<T> targetClass, HandlerConsumer<T> handlerConsumer) {
+    throw new RuntimeException("Not yet implemented");
+  }
+
+  @Override
+  public void messageLoop() {
+    throw new RuntimeException("Not yet implemented");
+  }
+
+  @Override
+  public void publishMessage(String deviceId, Object message) {
+    throw new RuntimeException("Not yet implemented");
   }
 
   static class OutputBundle {
