@@ -28,6 +28,7 @@ public class MappingAgent extends MappingBase {
   private static final String DISCOVERY_FAMILY = "virtual";
   private final Map<String, FamilyDiscoveryState> familyStates = new HashMap<>();
   private MappingSink mappingSink;
+  private MappingPipeline mappingPipeline;
   private final List<HandlerSpecification> handlers = ImmutableList.of(
       MessageHandler.handlerSpecification(DiscoveryState.class, this::discoveryStateHandler),
       MessageHandler.handlerSpecification(MappingEvent.class, this::mappingEventHandler)
@@ -53,6 +54,7 @@ public class MappingAgent extends MappingBase {
   private void initializeSink() {
     mappingSink = new MappingSink(siteModel);
     mappingSink.initialize();
+    mappingPipeline = new MappingPipeline(siteModel);
   }
 
   private void startDiscovery() {
@@ -107,6 +109,7 @@ public class MappingAgent extends MappingBase {
       mappingCommand.timestamp = mappingEvent.timestamp;
       mappingCommand.translation = entity.translation;
       mappingSink.updateCommand(envelope, mappingCommand);
+      mappingPipeline.onboard(entity);
     });
   }
 

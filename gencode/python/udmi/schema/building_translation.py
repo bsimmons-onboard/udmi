@@ -7,6 +7,7 @@ class BuildingTranslation:
   def __init__(self):
     self.present_value = None
     self.units = None
+    self.ref = None
     self.states = None
 
   @staticmethod
@@ -16,6 +17,7 @@ class BuildingTranslation:
     result = BuildingTranslation()
     result.present_value = source.get('present_value')
     result.units = source.get('units')
+    result.ref = source.get('ref')
     result.states = source.get('states')
     return result
 
@@ -41,6 +43,8 @@ class BuildingTranslation:
       result['present_value'] = self.present_value # 5
     if self.units:
       result['units'] = self.units # 5
+    if self.ref:
+      result['ref'] = self.ref # 5
     if self.states:
       result['states'] = self.states # 5
     return result

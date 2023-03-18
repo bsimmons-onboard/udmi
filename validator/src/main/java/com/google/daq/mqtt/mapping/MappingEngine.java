@@ -86,12 +86,13 @@ public class MappingEngine extends MappingBase {
     getDeviceState(deviceId).exported = new Date();
   }
 
-  private SimpleEntry<String, BuildingTranslation> makeTranslation(
+  SimpleEntry<String, BuildingTranslation> makeTranslation(
       Entry<String, PointEnumerationEvent> entry) {
     BuildingTranslation buildingTranslation = new BuildingTranslation();
     PointEnumerationEvent value = entry.getValue();
     buildingTranslation.present_value = value.name;
     buildingTranslation.units = value.units;
+    buildingTranslation.ref = value.name;
     return new SimpleEntry<>(entry.getKey(), buildingTranslation);
   }
 
