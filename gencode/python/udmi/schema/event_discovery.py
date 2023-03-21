@@ -63,7 +63,7 @@ class DiscoveryEvent:
     self.scan_family = None
     self.scan_addr = None
     self.families = None
-    self.uniqs = None
+    self.point_refs = None
     self.features = None
     self.system = None
 
@@ -79,7 +79,7 @@ class DiscoveryEvent:
     result.scan_family = source.get('scan_family')
     result.scan_addr = source.get('scan_addr')
     result.families = FamilyDiscoveryEvent.map_from(source.get('families'))
-    result.uniqs = PointEnumerationEvent.map_from(source.get('uniqs'))
+    result.point_refs = PointEnumerationEvent.map_from(source.get('point_refs'))
     result.features = FeatureEnumerationEvent.map_from(source.get('features'))
     result.system = SystemDiscoveryEvent.from_dict(source.get('system'))
     return result
@@ -116,8 +116,8 @@ class DiscoveryEvent:
       result['scan_addr'] = self.scan_addr # 5
     if self.families:
       result['families'] = FamilyDiscoveryEvent.expand_dict(self.families) # 2
-    if self.uniqs:
-      result['uniqs'] = PointEnumerationEvent.expand_dict(self.uniqs) # 2
+    if self.point_refs:
+      result['point_refs'] = PointEnumerationEvent.expand_dict(self.point_refs) # 2
     if self.features:
       result['features'] = FeatureEnumerationEvent.expand_dict(self.features) # 2
     if self.system:

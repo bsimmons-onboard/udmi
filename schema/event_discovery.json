@@ -45,8 +45,8 @@
         }
       }
     },
-    "uniqs": {
-      "description": "Collection of unique data points available for this device.",
+    "point_refs": {
+      "description": "Collection of data points references for this device.",
       "additionalProperties": false,
       "existingJavaType": "java.util.Map<String, PointEnumerationEvent>",
       "patternProperties": {

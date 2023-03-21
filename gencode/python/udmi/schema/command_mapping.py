@@ -1,6 +1,6 @@
 """Generated class for command_mapping.json"""
 from .common import Entry
-from .equipment_translation import BuildingConfig
+from .equipment_translations import EquipmentTranslations
 
 
 class MappingCommand:
@@ -12,7 +12,7 @@ class MappingCommand:
     self.guid = None
     self.device_num_id = None
     self.status = None
-    self.translation = None
+    self.translations = None
 
   @staticmethod
   def from_dict(source):
@@ -24,7 +24,7 @@ class MappingCommand:
     result.guid = source.get('guid')
     result.device_num_id = source.get('device_num_id')
     result.status = Entry.from_dict(source.get('status'))
-    result.translation = BuildingTranslation.map_from(source.get('translation'))
+    result.translations = BuildingTranslation.map_from(source.get('translations'))
     return result
 
   @staticmethod
@@ -55,6 +55,6 @@ class MappingCommand:
       result['device_num_id'] = self.device_num_id # 5
     if self.status:
       result['status'] = self.status.to_dict() # 4
-    if self.translation:
-      result['translation'] = BuildingTranslation.expand_dict(self.translation) # 2
+    if self.translations:
+      result['translations'] = BuildingTranslation.expand_dict(self.translations) # 2
     return result

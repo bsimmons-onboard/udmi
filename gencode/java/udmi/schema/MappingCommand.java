@@ -23,7 +23,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "guid",
     "device_num_id",
     "status",
-    "translation"
+    "translations"
 })
 @Generated("jsonschema2pojo")
 public class MappingCommand {
@@ -65,20 +65,20 @@ public class MappingCommand {
     @JsonProperty("status")
     public Entry status;
     /**
-     * Building Config
+     * Equipment Translations
      * <p>
      * [Discovery result](../docs/specs/discovery.md) with implicit enumeration
      * 
      */
-    @JsonProperty("translation")
+    @JsonProperty("translations")
     @JsonPropertyDescription("[Discovery result](../docs/specs/discovery.md) with implicit enumeration")
-    public HashMap<String, BuildingTranslation> translation;
+    public HashMap<String, BuildingTranslation> translations;
 
     @Override
     public int hashCode() {
         int result = 1;
+        result = ((result* 31)+((this.translations == null)? 0 :this.translations.hashCode()));
         result = ((result* 31)+((this.device_num_id == null)? 0 :this.device_num_id.hashCode()));
-        result = ((result* 31)+((this.translation == null)? 0 :this.translation.hashCode()));
         result = ((result* 31)+((this.guid == null)? 0 :this.guid.hashCode()));
         result = ((result* 31)+((this.version == null)? 0 :this.version.hashCode()));
         result = ((result* 31)+((this.timestamp == null)? 0 :this.timestamp.hashCode()));
@@ -95,7 +95,7 @@ public class MappingCommand {
             return false;
         }
         MappingCommand rhs = ((MappingCommand) other);
-        return (((((((this.device_num_id == rhs.device_num_id)||((this.device_num_id!= null)&&this.device_num_id.equals(rhs.device_num_id)))&&((this.translation == rhs.translation)||((this.translation!= null)&&this.translation.equals(rhs.translation))))&&((this.guid == rhs.guid)||((this.guid!= null)&&this.guid.equals(rhs.guid))))&&((this.version == rhs.version)||((this.version!= null)&&this.version.equals(rhs.version))))&&((this.timestamp == rhs.timestamp)||((this.timestamp!= null)&&this.timestamp.equals(rhs.timestamp))))&&((this.status == rhs.status)||((this.status!= null)&&this.status.equals(rhs.status))));
+        return (((((((this.translations == rhs.translations)||((this.translations!= null)&&this.translations.equals(rhs.translations)))&&((this.device_num_id == rhs.device_num_id)||((this.device_num_id!= null)&&this.device_num_id.equals(rhs.device_num_id))))&&((this.guid == rhs.guid)||((this.guid!= null)&&this.guid.equals(rhs.guid))))&&((this.version == rhs.version)||((this.version!= null)&&this.version.equals(rhs.version))))&&((this.timestamp == rhs.timestamp)||((this.timestamp!= null)&&this.timestamp.equals(rhs.timestamp))))&&((this.status == rhs.status)||((this.status!= null)&&this.status.equals(rhs.status))));
     }
 
 }

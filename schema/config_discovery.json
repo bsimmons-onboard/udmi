@@ -18,7 +18,7 @@
         "families": {
           "type": "boolean"
         },
-        "uniqs": {
+        "point_refs": {
           "type": "boolean"
         },
         "features": {

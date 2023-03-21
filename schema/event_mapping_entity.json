@@ -12,7 +12,7 @@
       "examples": ["fcu-8_1"]
     },
     "type": {
-      "description": "DBO namespace and entity type",
+      "description": "namespace and entity type",
       "type": "string",
       "pattern": "^([_A-Z]+/)?[_A-Z]+$",
       "examples": ["HVAC/FCU_DFSS_DSP_CHWZC"]
@@ -36,11 +36,11 @@
     "links": {
       "$ref": "file:virtual_links.json"
     },
-    "translation": {
-      "$ref": "file:equipment_translation.json"
+    "translations": {
+      "$ref": "file:equipment_translations.json"
     },
     "missing_telemetry_fields": {
-      "description": "DBO fields which are required by the type but absent from the translation",
+      "description": "fields which are required by the type but absent from the translation",
       "type": "array",
       "items": {
         "type": "string",

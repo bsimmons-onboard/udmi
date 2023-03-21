@@ -1,6 +1,6 @@
 """Generated class for event_mapping_entity.json"""
 from .virtual_links import VirtualEquipmentLinks
-from .equipment_translation import BuildingConfig
+from .equipment_translations import EquipmentTranslations
 
 
 class MappingEventEntity:
@@ -12,7 +12,7 @@ class MappingEventEntity:
     self.cloud_device_id = None
     self.connections = None
     self.links = None
-    self.translation = None
+    self.translations = None
     self.missing_telemetry_fields = None
 
   @staticmethod
@@ -25,7 +25,7 @@ class MappingEventEntity:
     result.cloud_device_id = source.get('cloud_device_id')
     result.connections = source.get('connections')
     result.links = Object96DF83D1.map_from(source.get('links'))
-    result.translation = BuildingTranslation.map_from(source.get('translation'))
+    result.translations = BuildingTranslation.map_from(source.get('translations'))
     result.missing_telemetry_fields = source.get('missing_telemetry_fields')
     return result
 
@@ -57,8 +57,8 @@ class MappingEventEntity:
       result['connections'] = self.connections # 1
     if self.links:
       result['links'] = Object96DF83D1.expand_dict(self.links) # 2
-    if self.translation:
-      result['translation'] = BuildingTranslation.expand_dict(self.translation) # 2
+    if self.translations:
+      result['translations'] = BuildingTranslation.expand_dict(self.translations) # 2
     if self.missing_telemetry_fields:
       result['missing_telemetry_fields'] = self.missing_telemetry_fields # 1
     return result

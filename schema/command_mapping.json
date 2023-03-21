@@ -27,8 +27,8 @@
     "status": {
       "$ref": "file:common.json#/definitions/entry"
     },
-    "translation": {
-      "$ref": "file:equipment_translation.json"
+    "translations": {
+      "$ref": "file:equipment_translations.json"
     }
   }
 }

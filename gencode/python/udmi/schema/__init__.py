@@ -21,7 +21,7 @@ from .configuration_endpoint import EndpointConfiguration
 from .configuration_execution import ExecutionConfiguration
 from .configuration_pubber import PubberConfiguration
 from .envelope import Envelope
-from .equipment_translation import BuildingConfig
+from .equipment_translations import EquipmentTranslations
 from .event import Event
 from .event_discovery import DiscoveryEvent
 from .event_discovery_family import FamilyDiscoveryEvent

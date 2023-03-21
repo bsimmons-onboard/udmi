@@ -7,7 +7,7 @@ class PointEnumerationEvent:
   """Generated schema class"""
 
   def __init__(self):
-    self.name = None
+    self.local_name = None
     self.possible_values = None
     self.units = None
     self.type = None
@@ -22,7 +22,7 @@ class PointEnumerationEvent:
     if not source:
       return None
     result = PointEnumerationEvent()
-    result.name = source.get('name')
+    result.local_name = source.get('local_name')
     result.possible_values = source.get('possible_values')
     result.units = source.get('units')
     result.type = source.get('type')
@@ -51,8 +51,8 @@ class PointEnumerationEvent:
 
   def to_dict(self):
     result = {}
-    if self.name:
-      result['name'] = self.name # 5
+    if self.local_name:
+      result['local_name'] = self.local_name # 5
     if self.possible_values:
       result['possible_values'] = self.possible_values # 1
     if self.units:

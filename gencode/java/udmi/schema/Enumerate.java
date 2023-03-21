@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "families",
-    "uniqs",
+    "point_refs",
     "features"
 })
 @Generated("jsonschema2pojo")
@@ -17,8 +17,8 @@ public class Enumerate {
 
     @JsonProperty("families")
     public Boolean families;
-    @JsonProperty("uniqs")
-    public Boolean uniqs;
+    @JsonProperty("point_refs")
+    public Boolean point_refs;
     @JsonProperty("features")
     public Boolean features;
 
@@ -27,7 +27,7 @@ public class Enumerate {
         int result = 1;
         result = ((result* 31)+((this.features == null)? 0 :this.features.hashCode()));
         result = ((result* 31)+((this.families == null)? 0 :this.families.hashCode()));
-        result = ((result* 31)+((this.uniqs == null)? 0 :this.uniqs.hashCode()));
+        result = ((result* 31)+((this.point_refs == null)? 0 :this.point_refs.hashCode()));
         return result;
     }
 
@@ -40,7 +40,7 @@ public class Enumerate {
             return false;
         }
         Enumerate rhs = ((Enumerate) other);
-        return ((((this.features == rhs.features)||((this.features!= null)&&this.features.equals(rhs.features)))&&((this.families == rhs.families)||((this.families!= null)&&this.families.equals(rhs.families))))&&((this.uniqs == rhs.uniqs)||((this.uniqs!= null)&&this.uniqs.equals(rhs.uniqs))));
+        return ((((this.features == rhs.features)||((this.features!= null)&&this.features.equals(rhs.features)))&&((this.families == rhs.families)||((this.families!= null)&&this.families.equals(rhs.families))))&&((this.point_refs == rhs.point_refs)||((this.point_refs!= null)&&this.point_refs.equals(rhs.point_refs))));
     }
 
 }

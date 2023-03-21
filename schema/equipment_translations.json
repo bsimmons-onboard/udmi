@@ -1,6 +1,6 @@
 {
   "$udmi_version": "1.4.1",
-  "title": "Building Config",
+  "title": "Equipment Translations",
   "description": "[Discovery result](../docs/specs/discovery.md) with implicit enumeration",
   "type": "object",
   "$schema": "http://json-schema.org/draft-07/schema#",

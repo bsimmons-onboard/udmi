@@ -5,7 +5,7 @@ class BuildingTranslation:
   """Generated schema class"""
 
   def __init__(self):
-    self.present_value = None
+    self.present_value2 = None
     self.units = None
     self.ref = None
     self.states = None
@@ -15,7 +15,7 @@ class BuildingTranslation:
     if not source:
       return None
     result = BuildingTranslation()
-    result.present_value = source.get('present_value')
+    result.present_value2 = source.get('present_value2')
     result.units = source.get('units')
     result.ref = source.get('ref')
     result.states = source.get('states')
@@ -39,8 +39,8 @@ class BuildingTranslation:
 
   def to_dict(self):
     result = {}
-    if self.present_value:
-      result['present_value'] = self.present_value # 5
+    if self.present_value2:
+      result['present_value2'] = self.present_value2 # 5
     if self.units:
       result['units'] = self.units # 5
     if self.ref:

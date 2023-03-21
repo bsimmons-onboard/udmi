@@ -8,18 +8,17 @@
   "timestamp": "2018-08-26T21:39:29.364Z",
   "guid": "21387BBA787ADD",
   "device_num_id": 2183721521321,
-  "translation": {
+  "translations": {
     "zone_air_temperature_sensor": {
-      "present_value": "points.temp_1.present_value",
+      "local_name": "temp_1",
       "units": {
-        "key": "pointset.points.temp_1.units",
         "values": {
           "degrees_celsius": "degC"
         }
       }
     },
     "supply_air_isolation_damper_command": {
-      "present_value": "points.damper_1.present_value",
+      "local_name": "damper_1",
       "states": {
         "OPEN": "1",
         "CLOSED": [

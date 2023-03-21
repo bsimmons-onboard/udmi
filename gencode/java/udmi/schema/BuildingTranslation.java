@@ -16,7 +16,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "present_value",
+    "present_value2",
     "units",
     "ref",
     "states"
@@ -28,9 +28,9 @@ public class BuildingTranslation {
      * dotted path to present_value field
      * 
      */
-    @JsonProperty("present_value")
+    @JsonProperty("present_value2")
     @JsonPropertyDescription("dotted path to present_value field")
-    public String present_value;
+    public String present_value2;
     @JsonProperty("units")
     public Object units;
     @JsonProperty("ref")
@@ -43,7 +43,7 @@ public class BuildingTranslation {
         int result = 1;
         result = ((result* 31)+((this.ref == null)? 0 :this.ref.hashCode()));
         result = ((result* 31)+((this.units == null)? 0 :this.units.hashCode()));
-        result = ((result* 31)+((this.present_value == null)? 0 :this.present_value.hashCode()));
+        result = ((result* 31)+((this.present_value2 == null)? 0 :this.present_value2 .hashCode()));
         result = ((result* 31)+((this.states == null)? 0 :this.states.hashCode()));
         return result;
     }
@@ -57,7 +57,7 @@ public class BuildingTranslation {
             return false;
         }
         BuildingTranslation rhs = ((BuildingTranslation) other);
-        return (((((this.ref == rhs.ref)||((this.ref!= null)&&this.ref.equals(rhs.ref)))&&((this.units == rhs.units)||((this.units!= null)&&this.units.equals(rhs.units))))&&((this.present_value == rhs.present_value)||((this.present_value!= null)&&this.present_value.equals(rhs.present_value))))&&((this.states == rhs.states)||((this.states!= null)&&this.states.equals(rhs.states))));
+        return (((((this.ref == rhs.ref)||((this.ref!= null)&&this.ref.equals(rhs.ref)))&&((this.units == rhs.units)||((this.units!= null)&&this.units.equals(rhs.units))))&&((this.present_value2 == rhs.present_value2)||((this.present_value2 != null)&&this.present_value2 .equals(rhs.present_value2))))&&((this.states == rhs.states)||((this.states!= null)&&this.states.equals(rhs.states))));
     }
 
 }
