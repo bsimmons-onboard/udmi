@@ -1,0 +1,66 @@
+{
+  "timestamp": "2023-03-01T18:27:24.545600+00:00",
+  "version": "1.4.0",
+  "entity_type": "ELECTRICAL/GEN_SS_TKLS_OTPM_PWM_RDM_BTEPM",
+  "entity_code": "elecMeter__2ATS",
+  "entity_guid": "6773a63b-2f61-4aeb-9c52-8095660618b2",
+  "contained_by": {
+    "ebe40a2e-b753-4883-8c2b-52a675b77192": {
+    }
+  }
+  "points": {
+    "apparent_power_sensor": {
+      "ref": "kVA",
+      
+      "entities": {
+    "ebe40a2e-b753-4883-8c2b-52a675b77192": {
+      "type": "FACILITIES/BUILDING",
+      "code": "UK-FII-I99-CLEAN"
+    },
+      "connections": {
+          "CONTAINS"
+        ]
+      },
+      "translation": {
+        "apparent_power_sensor": {
+          "present_value": "data.kVA.present-value",
+          "units": {
+            "key": "data.kVA.present-value",
+            "values": {
+              "kilovolt_amperes_apparent": "kilovolt_amperes_apparent"
+            }
+          }
+        },
+        "average_inter_line_voltage_sensor_1": {
+          "present_value": "data.Volts_AB.present-value",
+          "units": {
+            "key": "data.Volts_AB.present-value",
+            "values": {
+              "volts": "volts"
+            }
+          }
+        },
+        "average_inter_line_voltage_sensor_2": {
+          "present_value": "data.Volts_AN.present-value",
+          "units": {
+            "key": "data.Volts_AN.present-value",
+            "values": {
+              "volts": "volts"
+            }
+          }
+        }
+      },
+      "cloud_device_id": "2ATS_Meter",
+      "missing_telemetry_fields": [
+        "battery_voltage_sensor",
+        "run_time_accumulator",
+        "battery_current_sensor",
+        "tank_level_status",
+        "run_command",
+        "oil_pressure_sensor",
+        "oil_temperature_sensor",
+        "energy_accumulator"
+      ]
+    }
+  }
+}

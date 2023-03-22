@@ -1,0 +1,237 @@
+{
+  "timestamp": "2023-03-01T18:27:24.545600+00:00",
+  "version": "1.4.0",
+  "entities": {
+    "ebe40a2e-b753-4883-8c2b-52a675b77191": {
+      "type": "FACILITIES/BUILDING",
+      "code": "US-SVL-TC2-CLEAN"
+    },
+    "6773a63b-2f61-4aeb-9c52-8095660610b2": {
+      "connections": {
+        "ebe40a2e-b753-4883-8c2b-52a675b77191": [
+          "CONTAINS"
+        ]
+      },
+      "type": "ELECTRICAL/GEN_SS_TKLS_OTPM_PWM_RDM_BTEPM",
+      "code": "elecMeter__2ATS",
+      "translation": {
+        "apparent_power_sensor": {
+          "present_value": "data.kVA.present-value",
+          "units": {
+            "key": "data.kVA.present-value",
+            "values": {
+              "kilovolt_amperes_apparent": "kilovolt_amperes_apparent"
+            }
+          }
+        },
+        "average_inter_line_voltage_sensor_1": {
+          "present_value": "data.Volts_AB.present-value",
+          "units": {
+            "key": "data.Volts_AB.present-value",
+            "values": {
+              "volts": "volts"
+            }
+          }
+        },
+        "average_inter_line_voltage_sensor_2": {
+          "present_value": "data.Volts_AN.present-value",
+          "units": {
+            "key": "data.Volts_AN.present-value",
+            "values": {
+              "volts": "volts"
+            }
+          }
+        },
+        "average_inter_line_voltage_sensor_3": {
+          "present_value": "data.Volts_BC.present-value",
+          "units": {
+            "key": "data.Volts_BC.present-value",
+            "values": {
+              "volts": "volts"
+            }
+          }
+        },
+        "average_inter_line_voltage_sensor_4": {
+          "present_value": "data.Volts_BN.present-value",
+          "units": {
+            "key": "data.Volts_BN.present-value",
+            "values": {
+              "volts": "volts"
+            }
+          }
+        },
+        "average_inter_line_voltage_sensor_5": {
+          "present_value": "data.Volts_CA.present-value",
+          "units": {
+            "key": "data.Volts_CA.present-value",
+            "values": {
+              "volts": "volts"
+            }
+          }
+        },
+        "average_inter_line_voltage_sensor_6": {
+          "present_value": "data.Volts_CN.present-value",
+          "units": {
+            "key": "data.Volts_CN.present-value",
+            "values": {
+              "volts": "volts"
+            }
+          }
+        },
+        "average_inter_line_voltage_sensor_7": {
+          "present_value": "data.Volts_LL.present-value",
+          "units": {
+            "key": "data.Volts_LL.present-value",
+            "values": {
+              "volts": "volts"
+            }
+          }
+        },
+        "average_inter_line_voltage_sensor_8": {
+          "present_value": "data.Volts_LN.present-value",
+          "units": {
+            "key": "data.Volts_LN.present-value",
+            "values": {
+              "volts": "volts"
+            }
+          }
+        },
+        "line_current_sensor_1": {
+          "present_value": "data.Current.present-value",
+          "units": {
+            "key": "data.Current.present-value",
+            "values": {
+              "amperes": "amperes"
+            }
+          }
+        },
+        "line_current_sensor_2": {
+          "present_value": "data.Current_A.present-value",
+          "units": {
+            "key": "data.Current_A.present-value",
+            "values": {
+              "amperes": "amperes"
+            }
+          }
+        },
+        "line_current_sensor_3": {
+          "present_value": "data.Current_B.present-value",
+          "units": {
+            "key": "data.Current_B.present-value",
+            "values": {
+              "amperes": "amperes"
+            }
+          }
+        },
+        "line_current_sensor_4": {
+          "present_value": "data.Current_C.present-value",
+          "units": {
+            "key": "data.Current_C.present-value",
+            "values": {
+              "amperes": "amperes"
+            }
+          }
+        },
+        "line_frequency_sensor": {
+          "present_value": "data.Frequency.present-value",
+          "units": {
+            "key": "data.Frequency.present-value",
+            "values": {
+              "hertz": "hertz"
+            }
+          }
+        },
+        "power_sensor_1": {
+          "present_value": "data.kW.present-value",
+          "units": {
+            "key": "data.kW.present-value",
+            "values": {
+              "kilowatts": "kilowatts"
+            }
+          }
+        },
+        "power_sensor_2": {
+          "present_value": "data.kW_A.present-value",
+          "units": {
+            "key": "data.kW_A.present-value",
+            "values": {
+              "kilowatts": "kilowatts"
+            }
+          }
+        },
+        "power_sensor_3": {
+          "present_value": "data.kW_B.present-value",
+          "units": {
+            "key": "data.kW_B.present-value",
+            "values": {
+              "kilowatts": "kilowatts"
+            }
+          }
+        },
+        "power_sensor_4": {
+          "present_value": "data.kW_C.present-value",
+          "units": {
+            "key": "data.kW_C.present-value",
+            "values": {
+              "kilowatts": "kilowatts"
+            }
+          }
+        },
+        "powerfactor_sensor_1": {
+          "present_value": "data.PF.present-value",
+          "units": {
+            "key": "data.PF.present-value",
+            "values": {
+              "no_units": "no-units"
+            }
+          }
+        },
+        "powerfactor_sensor_2": {
+          "present_value": "data.PF_A.present-value",
+          "units": {
+            "key": "data.PF_A.present-value",
+            "values": {
+              "no_units": "no-units"
+            }
+          }
+        },
+        "powerfactor_sensor_3": {
+          "present_value": "data.PF_B.present-value",
+          "units": {
+            "key": "data.PF_B.present-value",
+            "values": {
+              "no_units": "no-units"
+            }
+          }
+        },
+        "powerfactor_sensor_4": {
+          "present_value": "data.PF_C.present-value",
+          "units": {
+            "key": "data.PF_C.present-value",
+            "values": {
+              "no_units": "no-units"
+            }
+          }
+        },
+        "run_status": {
+          "present_value": "data.Device Status.present-value",
+          "states": {
+            "ON": "active",
+            "OFF": "inactive"
+          }
+        }
+      },
+      "cloud_device_id": "2ATS_Meter",
+      "missing_telemetry_fields": [
+        "battery_voltage_sensor",
+        "run_time_accumulator",
+        "battery_current_sensor",
+        "tank_level_status",
+        "run_command",
+        "oil_pressure_sensor",
+        "oil_temperature_sensor",
+        "energy_accumulator"
+      ]
+    }
+  }
+}
