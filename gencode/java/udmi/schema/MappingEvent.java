@@ -51,11 +51,11 @@ public class MappingEvent {
     /**
      * Mapping Event Entities
      * <p>
-     * Mapper output describing a group of devices by their guids
+     * Mapper output describing a group of mapped entities by their guids
      * 
      */
     @JsonProperty("entities")
-    @JsonPropertyDescription("Mapper output describing a group of devices by their guids")
+    @JsonPropertyDescription("Mapper output describing a group of mapped entities by their guids")
     public HashMap<String, MappingEventEntity> entities;
 
     @Override

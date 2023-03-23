@@ -38,11 +38,11 @@ public class MappingEventEntity {
     @JsonPropertyDescription("Human readable code for the entity, should be unique in the document scope")
     public java.lang.String code;
     /**
-     * DBO namespace and entity type
+     * namespace and entity type
      * 
      */
     @JsonProperty("type")
-    @JsonPropertyDescription("DBO namespace and entity type")
+    @JsonPropertyDescription("namespace and entity type")
     public java.lang.String type;
     /**
      * Opaque identifier for the entity
@@ -77,11 +77,11 @@ public class MappingEventEntity {
     @JsonPropertyDescription("[Discovery result](../docs/specs/discovery.md) with implicit enumeration")
     public HashMap<String, BuildingTranslation> translations;
     /**
-     * DBO fields which are required by the type but absent from the translation
+     * fields which are required by the type but absent from the translation
      * 
      */
     @JsonProperty("missing_telemetry_fields")
-    @JsonPropertyDescription("DBO fields which are required by the type but absent from the translation")
+    @JsonPropertyDescription("fields which are required by the type but absent from the translation")
     public List<java.lang.String> missing_telemetry_fields = new ArrayList<java.lang.String>();
 
     @Override
