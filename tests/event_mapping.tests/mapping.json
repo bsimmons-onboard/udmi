@@ -7,18 +7,8 @@
   "version": "1.4.1",
   "timestamp": "2018-08-26T21:39:29.364Z",
   "entities": {
-    "dea1fcd5-6942-47a2-ba75-448a7ed47fd7": {
-      "code": "US-SVL-MP2",
-      "type": "FACILITIES/BUILDING"
-    },
-    "7e39af7a-9135-4e06-bbf8-bcd671b67ed6": {
-      "code": "US-SVL-MP2-8",
-      "type": "FACILITIES/FLOOR",
-      "connections": {
-        "dea1fcd5-6942-47a2-ba75-448a7ed47fd7": "CONTAINS"
-      }
-    },
     "98d597ab-1183-4cfc-803e-728ec55cae39": {
+      // TAP: What still need to understand how we think about and map rooms or other spaces
       "code": "US-SVL-MP2-8-Rm-8F7",
       "type": "FACILITIES/ROOM",
       "connections": {
@@ -61,25 +51,30 @@
         "7e39af7a-9135-4e06-bbf8-bcd671b67ed6": "CONTAINS",
         "98d597ab-1183-4cfc-803e-728ec55cae39": "CONTAINS"
       },
-      "cloud_device_id": "3607425",
+      "cloud_device_id": "3607425", // TAP: Change to device_num_id
       "translation": {
         "zone_air_temperature_sensor": {
-          "present_value": "data.analog-input_4.present-value",
+          "present_value": {
+            // TAP: Make structure parallel with units
+            "path": "data.analog-input_4.present-value"
+          },
           "units": {
-            "key": "data.analog-input_4.present-value",
+            // TAP change 'key' to 'path'
+            "path": "data.analog-input_4.units",
             "values": {
+              // TAP: What does this translation mapping mean?
               "degrees_fahrenheit": "degrees-fahrenheit"
             }
           }
+        },
+        "discharge_fan_run_command": {
+          // TAP: Map missing fields as empty translations (no path)
+        },
+        "zone_air_heating_temperature_setpoint": {
         }
-      },
-      "missing_telemetry_fields": [
-        "discharge_fan_run_command",
-        "discharge_fan_run_status",
-        "zone_air_heating_temperature_setpoint",
-        "zone_air_cooling_temperature_setpoint",
-        "chilled_water_valve_percentage_command"
-      ]
+      }
     }
+    // TAP: Ideally streamline message to only contain one entity (remove rooms/floors/etc...)
+
   }
 }

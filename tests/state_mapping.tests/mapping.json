@@ -18,6 +18,14 @@
 {
   "version": "1.4.1",
   "timestamp": "2018-08-26T21:39:29.364Z",
+  // TAP: Should add a summary mapping state, so appropriate aggregate across all devices
+  "summary": {
+      "imported": "2018-08-26T21:39:28.364Z",     // Last time the mapping was imported
+      "discovered": "2018-08-26T21:39:29.364Z",  // Last received discovery message
+      "predicted": "2018-08-28T21:59:18.364Z",  // Last recommendation staging (result of automatic prediction)
+      "promoted": "2018-08-28T22:39:12.364Z",  // Last recommendation promotion (result of manual QA)
+      "exported": "2018-08-28T22:39:12.364Z"  // Last time this device mapping was exported
+  },
   "devices": {
     "FCU-123": {
       "guid": "21387BBA787ADD",
@@ -26,6 +34,20 @@
       "predicted": "2018-08-28T21:59:18.364Z",  // Last recommendation staging (result of automatic prediction)
       "promoted": "2018-08-28T22:39:12.364Z",  // Last recommendation promotion (result of manual QA)
       "exported": "2018-08-28T22:39:12.364Z"  // Last time this device mapping was exported
+    }
+  },
+  // TAP: Proposal to move common entities to shared state?
+  "entities": {
+    "dea1fcd5-6942-47a2-ba75-448a7ed47fd7": {
+      "code": "US-SVL-MP2",
+      "type": "FACILITIES/BUILDING"
+    },
+    "7e39af7a-9135-4e06-bbf8-bcd671b67ed6": {
+      "code": "US-SVL-MP2-8",
+      "type": "FACILITIES/FLOOR",
+      "connections": {
+        "dea1fcd5-6942-47a2-ba75-448a7ed47fd7": "CONTAINS"
+      }
     }
   }
 }
