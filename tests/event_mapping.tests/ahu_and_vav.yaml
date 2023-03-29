@@ -1,0 +1,126 @@
+CONFIG_METADATA:
+  operation: INITIALIZE
+
+# AHU-1 that feeds a downstream VAV-1
+
+dea1fcd5-6942-47a2-ba75-448a7ed47fd7:
+  etag: f65dfa7d66
+  code: US-SVL-MP2
+  type: FACILITIES/BUILDING
+
+5707b1c8-3d59-4296-8eae-0ff604f27f32:
+  cloud_device_id: '2100005293500001'
+  etag: f65dfa7d66
+  code: ahu-1
+  type: HVAC/AHU_CSP_DFSS_DX2ZC_ECONZ
+  connections:
+    dea1fcd5-6942-47a2-ba75-448a7ed47fd7: CONTAINS
+    b5541dab-f0ed-4378-8481-01faa1dabc99: FEEDS
+  translation:
+    compressor_run_command_1:
+      present_value: points.binaryinput_5.present_value
+      states:
+        OFF: 'inactive'
+        ON: 'active'
+    compressor_run_command_2:
+      present_value: points.binaryinput_6.present_value
+      states:
+        OFF: 'inactive'
+        ON: 'active'
+    compressor_run_status_1:
+      present_value: points.binaryinput_7.present_value
+      states:
+        OFF: 'inactive'
+        ON: 'active'
+    compressor_run_status_2:
+      present_value: points.binaryinput_8.present_value
+      states:
+        OFF: 'inactive'
+        ON: 'active'
+    discharge_fan_run_command:
+      present_value: points.binaryinput_3.present_value
+      states:
+        OFF: 'inactive'
+        ON: 'active'
+    discharge_fan_run_status:
+      present_value: points.binaryinput_4.present_value
+      states:
+        OFF: 'inactive'
+        ON: 'active'
+    economizer_mode:
+      present_value: points.multistateinput_9.present_value
+      states:
+        Disabled: '1'
+        Differential_Enthalpy: '2'
+        Fixed_Enthalpy: '3'
+        Differential_Dry_Bulb: '4'
+        Fixed_Dry_Bulb: '5'
+    outside_air_damper_percentage_command:
+      present_value: points.analogvalue_10.present_value
+      units:
+        key: pointset.points.analogvalue_10.units
+        values:
+          percent: 'percent'
+    outside_air_temperature_sensor:
+      present_value: points.analogvalue_11.present_value
+      units:
+        key: pointset.points.analogvalue_11.units
+        values:
+          degrees_fahrenheit: 'degrees-fahrenheit'
+    zone_air_cooling_temperature_setpoint:
+      present_value: points.analoginput_1.present_value
+      units:
+        key: pointset.points.analoginput_1.units
+        values:
+          degrees_fahrenheit: 'degrees-fahrenheit'
+    zone_air_temperature_sensor:
+      present_value: points.analogvalue_2.present_value
+      units:
+        key: pointset.points.analogvalue_2.units
+        values:
+          degrees_fahrenheit: 'degrees-fahrenheit'
+
+b5541dab-f0ed-4378-8481-01faa1dabc99:
+  cloud_device_id: '2100005293563631'
+  etag: f65dfa7d66
+  code: vav-1
+  type: HVAC/VAV_SD_DSP
+  connections:
+    dea1fcd5-6942-47a2-ba75-448a7ed47fd7: CONTAINS
+  translation:
+    supply_air_damper_percentage_command:
+      present_value: data.analog-value_23.present-value
+      units:
+        key: data.analog-value_23.present-value
+        values:
+          percent: percent
+    supply_air_flowrate_sensor:
+      present_value: data.analog-value_21.present-value
+      units:
+        key: data.analog-value_21.present-value
+        values:
+          cubic_feet_per_minute: cubic-feet-per-minute
+    supply_air_flowrate_setpoint:
+      present_value: data.analog-value_22.present-value
+      units:
+        key: data.analog-value_22.present-value
+        values:
+          cubic_feet_per_minute: cubic-feet-per-minute
+    zone_air_cooling_temperature_setpoint:
+      present_value: data.analog-value_1.present-value
+      units:
+        key: data.analog-value_1.present-value
+        values:
+          degrees_fahrenheit: degrees-fahrenheit
+    zone_air_heating_temperature_setpoint:
+      present_value: data.analog-value_2.present-value
+      units:
+        key: data.analog-value_2.present-value
+        values:
+          degrees_fahrenheit: degrees-fahrenheit
+    zone_air_temperature_sensor:
+      present_value: data.analog-input_2.present-value
+      units:
+        key: data.analog-input_2.present-value
+        values:
+          degrees_fahrenheit: degrees-fahrenheit

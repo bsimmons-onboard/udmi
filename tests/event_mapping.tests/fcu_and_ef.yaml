@@ -1,0 +1,67 @@
+CONFIG_METADATA:
+  operation: INITIALIZE
+
+# Fan coil and exhaust fan are both wired to BACnet device id: "2001"
+
+dea1fcd5-6942-47a2-ba75-448a7ed47fd7:
+  etag: f65dfa7d
+  code: US-SVL-MP2
+  type: FACILITIES/BUILDING
+
+7e39af7a-9135-4e06-bbf8-bcd671b67ed6:
+  etag: f65dfa7d
+  code: US-SVL-MP2-8
+  type: FACILITIES/FLOOR
+  connections:
+    dea1fcd5-6942-47a2-ba75-448a7ed47fd7: CONTAINS
+
+98d597ab-1183-4cfc-803e-728ec55cae39:
+  etag: f65dfa7d
+  code: US-SVL-MP2-8-Rm-8F7
+  type: FACILITIES/ROOM
+  connections:
+    dea1fcd5-6942-47a2-ba75-448a7ed47fd7: CONTAINS
+    7e39af7a-9135-4e06-bbf8-bcd671b67ed6: CONTAINS
+
+b3964996-17f8-41b3-a761-e961f94d6760:
+  cloud_device_id: "2001"
+  etag: f65dfa7d
+  code: fcu-8_1
+  type: HVAC/FCU_DFSS_DSP_CHWZC
+  connections:
+    dea1fcd5-6942-47a2-ba75-448a7ed47fd7: CONTAINS
+    7e39af7a-9135-4e06-bbf8-bcd671b67ed6: CONTAINS
+    98d597ab-1183-4cfc-803e-728ec55cae39: CONTAINS
+  translation:
+    zone_air_temperature_sensor:
+      present_value: "data.analog-input_4.present-value"
+      units:
+        key: "data.analog-input_4.present-value"
+        values:
+          degrees_fahrenheit: "degrees-fahrenheit"
+    discharge_fan_run_command: MISSING
+    discharge_fan_run_status: MISSING
+    zone_air_heating_temperature_setpoint: MISSING
+    zone_air_cooling_temperature_setpoint: MISSING
+    chilled_water_valve_percentage_command: MISSING
+
+b3964996-17f8-41b3-a761-e961f94d6999:
+  cloud_device_id: "2001"
+  etag: f65dfa7d
+  code: ef-8_1
+  type: HVAC/FAN_SS
+  connections:
+    dea1fcd5-6942-47a2-ba75-448a7ed47fd7: CONTAINS
+    7e39af7a-9135-4e06-bbf8-bcd671b67ed6: CONTAINS
+    98d597ab-1183-4cfc-803e-728ec55cae39: CONTAINS
+  translation:
+    run_command:
+      present_value: data.binary-output_1.present-value
+      states:
+        'OFF': inactive
+        'ON': active
+    run_status:
+      present_value: data.binary-input_1.present-value
+      states:
+        'OFF': inactive
+        'ON': active
