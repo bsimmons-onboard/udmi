@@ -1,0 +1,137 @@
+CONFIG_METADATA:
+  operation: INITIALIZE
+
+d3c60518-160e-4367-9daa-69080b01a096:
+  id: FACILITIES/buildings/7567763254
+  type: FACILITIES/BUILDING
+  code: US-SVL-MP3
+
+00ea8bda-d35a-4522-9119-ee4ad6d1288e:
+  type: HVAC/FAN_FCU_US_SVL_MP3_1
+  code: FC 1-3
+  cloud_device_id: 2806654164282673
+  id: CDM/2806654164282673
+  translation:
+    chilled_water_valve_percentage_command:
+      present_value: data.analog-output_1.present-value
+      units:
+        key: data.analog-output_1.present-value
+        values:
+          percent: percent
+    discharge_air_temperature_sensor:
+      present_value: data.analog-input_2.present-value
+      units:
+        key: data.analog-input_2.present-value
+        values:
+          degrees_fahrenheit: degrees-fahrenheit
+    discharge_air_temperature_setpoint:
+      present_value: data.analog-value_17.present-value
+      units:
+        key: data.analog-value_17.present-value
+        values:
+          degrees_fahrenheit: degrees-fahrenheit
+    discharge_fan_run_status:
+      present_value: data.binary-input_1.present-value
+      states:
+        OFF: inactive
+        ON: active
+    heating_water_valve_percentage_command:
+      present_value: data.analog-output_3.present-value
+      units:
+        key: data.analog-output_3.present-value
+        values:
+          percent: percent
+    high_discharge_fan_speed_command:
+      present_value: data.binary-output_1.present-value
+      states:
+        OFF: inactive
+        ON: active
+    low_discharge_fan_speed_command:
+      present_value: data.binary-output_2.present-value
+      states:
+        OFF: inactive
+        ON: active
+    medium_discharge_fan_speed_command:
+      present_value: data.binary-output_3.present-value
+      states:
+        OFF: inactive
+        ON: active
+    return_air_temperature_sensor:
+      present_value: data.analog-input_1.present-value
+      units:
+        key: data.analog-input_1.present-value
+        values:
+          degrees_fahrenheit: degrees-fahrenheit
+    run_command_1:
+      present_value: data.binary-output_4.present-value
+      states:
+        OFF: inactive
+        ON: active
+    run_command_2:
+      present_value: data.binary-output_5.present-value
+      states:
+        OFF: inactive
+        ON: active
+    run_status_1:
+      present_value: data.binary-input_2.present-value
+      states:
+        OFF: inactive
+        ON: active
+    run_status_2:
+      present_value: data.binary-input_3.present-value
+      states:
+        OFF: inactive
+        ON: active
+    zone_air_cooling_temperature_setpoint:
+      present_value: data.analog-value_7.present-value
+      units:
+        key: data.analog-value_7.present-value
+        values:
+          degrees_fahrenheit: degrees-fahrenheit
+    zone_air_heating_temperature_setpoint:
+      present_value: data.analog-value_8.present-value
+      units:
+        key: data.analog-value_8.present-value
+        values:
+          degrees_fahrenheit: degrees-fahrenheit
+    zone_air_temperature_sensor:
+      present_value: data.analog-input_4.present-value
+      units:
+        key: data.analog-input_4.present-value
+        values:
+          degrees_fahrenheit: degrees-fahrenheit
+
+a2eb0092-6522-4032-a452-a75ba2daaa81:
+  type: HVAC/FCU_DFSS_DFHMLC_DSP_HWDC_CHWDC
+  code: US-SVL-MP3.FCU.FC-1-3
+  connections:
+    d3c60518-160e-4367-9daa-69080b01a096:
+    - CONTAINS
+  id: PHRED/2512382557639671808
+  links:
+    00ea8bda-d35a-4522-9119-ee4ad6d1288e:
+      chilled_water_valve_percentage_command: chilled_water_valve_percentage_command
+      discharge_air_temperature_sensor: discharge_air_temperature_sensor
+      discharge_air_temperature_setpoint: discharge_air_temperature_setpoint
+      discharge_fan_run_status: discharge_fan_run_status
+      heating_water_valve_percentage_command: heating_water_valve_percentage_command
+      high_discharge_fan_speed_command: high_discharge_fan_speed_command
+      low_discharge_fan_speed_command: low_discharge_fan_speed_command
+      medium_discharge_fan_speed_command: medium_discharge_fan_speed_command
+      return_air_temperature_sensor: return_air_temperature_sensor
+      zone_air_cooling_temperature_setpoint: zone_air_cooling_temperature_setpoint
+      zone_air_heating_temperature_setpoint: zone_air_heating_temperature_setpoint
+      zone_air_temperature_sensor: zone_air_temperature_sensor
+
+9a490dac-b5b2-4b51-97eb-a47938e00752:
+  type: HVAC/FAN_SS
+  code: US-SVL-MP3.FAN.EF 1-1
+  connections:
+    d3c60518-160e-4367-9daa-69080b01a096:
+    - CONTAINS
+  id: PHRED/5646887898289537024
+  links:
+    00ea8bda-d35a-4522-9119-ee4ad6d1288e:
+      run_command: run_command_1
+      run_status: run_status_1
+
