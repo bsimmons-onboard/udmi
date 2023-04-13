@@ -1,0 +1,68 @@
+CONFIG_METADATA:
+  operation: UPDATE
+
+6a19371c-05c8-4a01-8c4a-26f256be4c7f:
+  code: US-TEST
+  etag: d7b2915e
+  type: FACILITIES/BUILDING
+
+6ac639f8-303e-4305-9a02-88bd0e4d2ee2:
+  cloud_device_id: '2534682526069202'
+  code: VAVRH 2-4-8
+  etag: b71a843e
+  translation:
+    discharge_air_temperature_sensor:
+      present_value: data.analog-input_2.present-value
+      units:
+        key: data.analog-input_2.units
+        values:
+          degrees_fahrenheit: degrees-fahrenheit
+    discharge_air_temperature_setpoint:
+      present_value: data.analog-value_28.present-value
+      units:
+        key: data.analog-value_28.units
+        values:
+          degrees_fahrenheit: degrees-fahrenheit
+    heating_water_valve_percentage_command:
+      present_value: data.analog-output_1.present-value
+      units:
+        key: data.analog-output_1.units
+        values:
+          percent: percent
+    supply_air_damper_percentage_command:
+      present_value: data.analog-value_13.present-value
+      units:
+        key: data.analog-value_13.units
+        values:
+          percent: percent
+    supply_air_flowrate_sensor:
+      present_value: data.analog-input_1.present-value
+      units:
+        key: data.analog-input_1.units
+        values:
+          cubic_feet_per_minute: cubic-feet-per-minute
+    supply_air_flowrate_setpoint:
+      present_value: data.analog-value_11.present-value
+      units:
+        key: data.analog-value_11.units
+        values:
+          cubic_feet_per_minute: cubic-feet-per-minute
+    zone_air_cooling_temperature_setpoint:
+      present_value: data.analog-value_7.present-value
+      units:
+        key: data.analog-value_7.units
+        values:
+          degrees_fahrenheit: degrees-fahrenheit
+    zone_air_heating_temperature_setpoint:
+      present_value: data.analog-value_8.present-value
+      units:
+        key: data.analog-value_8.units
+        values:
+          degrees_fahrenheit: degrees-fahrenheit
+    zone_air_temperature_sensor:
+      present_value: data.analog-input_3.present-value
+      units:
+        key: data.analog-input_3.units
+        values:
+          degrees_fahrenheit: degrees-fahrenheit
+  type: HVAC/VAV_SD_DSP_HWDC

@@ -1,0 +1,97 @@
+CONFIG_METADATA:
+  operation: UPDATE
+
+6a19371c-05c8-4a01-8c4a-99f256be4c7f:
+  code: US-TEST
+  etag: d7b2915e
+  type: FACILITIES/BUILDING
+
+# edits from sol
+# data.analog-input_2.present-value
+#   discharge_air_temperature_sensor -> building_air_static_pressure_sensor
+
+# changed the guids
+# changed the code, VAVRH 2-4-8 -> VAV-RH 2-4-8
+
+# removed data.analog-input_3.present-value
+#   zone_air_temperature_sensor
+
+# split up the points from the sol vav entity into 2 virtual vavs
+# VAVRH 2-4-8 -> [VAV-RH 2-4-8, VAV-RH 2-4-9]
+
+6ac639f8-303e-4305-9a02-88bd0e4d2ee2:
+  cloud_device_id: '2534682526069202'
+  code: VAVRH-2-4-8
+  etag: b71a843e
+  translation:
+    building_air_static_pressure_sensor:
+      present_value: data.analog-input_2.present-value
+      units:
+        key: data.analog-input_2.units
+        values:
+          degrees_fahrenheit: degrees-fahrenheit
+    discharge_air_temperature_setpoint:
+      present_value: data.analog-value_28.present-value
+      units:
+        key: data.analog-value_28.units
+        values:
+          degrees_fahrenheit: degrees-fahrenheit
+    heating_water_valve_percentage_command:
+      present_value: data.analog-output_1.present-value
+      units:
+        key: data.analog-output_1.units
+        values:
+          percent: percent
+    supply_air_damper_percentage_command:
+      present_value: data.analog-value_13.present-value
+      units:
+        key: data.analog-value_13.units
+        values:
+          percent: percent
+    supply_air_flowrate_sensor:
+      present_value: data.analog-input_1.present-value
+      units:
+        key: data.analog-input_1.units
+        values:
+          cubic_feet_per_minute: cubic-feet-per-minute
+    supply_air_flowrate_setpoint:
+      present_value: data.analog-value_11.present-value
+      units:
+        key: data.analog-value_11.units
+        values:
+          cubic_feet_per_minute: cubic-feet-per-minute
+    zone_air_cooling_temperature_setpoint:
+      present_value: data.analog-value_7.present-value
+      units:
+        key: data.analog-value_7.units
+        values:
+          degrees_fahrenheit: degrees-fahrenheit
+    zone_air_heating_temperature_setpoint:
+      present_value: data.analog-value_8.present-value
+      units:
+        key: data.analog-value_8.units
+        values:
+          degrees_fahrenheit: degrees-fahrenheit
+  type: GATEWAYS/PASSTHROUGH
+
+88c639f8-303e-4305-9a02-99bd0e4d2ee2:
+  code: VAV-RH 2-4-8
+  etag: b71a843e
+  links:
+    6ac639f8-303e-4305-9a02-88bd0e4d2ee2:
+      building_air_static_pressure_sensor: building_air_static_pressure_sensor
+      discharge_air_temperature_setpoint: discharge_air_temperature_setpoint
+      heating_water_valve_percentage_command: heating_water_valve_percentage_command
+      supply_air_damper_percentage_command: supply_air_damper_percentage_command
+  type: HVAC/VAV_SD_DSP_HWDC
+
+99c639f8-303e-4305-9a02-88bd0e4d2ee2:
+  code: VAV-RH 2-4-9
+  etag: b71a843e
+  links:
+    6ac639f8-303e-4305-9a02-88bd0e4d2ee2:
+      supply_air_flowrate_sensor: supply_air_flowrate_sensor
+      supply_air_flowrate_setpoint: supply_air_flowrate_setpoint
+      zone_air_cooling_temperature_setpoint: zone_air_cooling_temperature_setpoint
+      zone_air_heating_temperature_setpoint: zone_air_heating_temperature_setpoint
+  type: HVAC/VAV_SD_DSP_HWDC
