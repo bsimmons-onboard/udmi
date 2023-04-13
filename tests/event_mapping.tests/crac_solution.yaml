@@ -1,0 +1,211 @@
+CONFIG_METADATA:
+  operation: UPDATE
+
+6a19371c-05c8-4a01-8c4a-26f256be4c7f:
+  code: US-TEST-2
+  etag: d7b2915e
+  type: FACILITIES/BUILDING
+
+9bd9c387-1fd4-4085-b74c-0d241852b9a6:
+  code: US-SVL-TC2-1
+  etag: c3665fec
+  type: FACILITIES/FLOOR
+
+# multiple virtual entities that link to the same reporting entity?
+
+2f3064be-1ec4-404a-9b1a-69472696d772:
+  cloud_device_id: '2665653793591020'
+  code: CRAC 2-1-1 & CRAC 2-1-2 Sitecore
+  etag: 08bf8a47
+  translation:
+    discharge_air_temperature_sensor_1:
+      present_value: data.analog-input_1.present-value
+      units:
+        key: data.analog-input_1.units
+        values:
+          degrees_fahrenheit: degrees-fahrenheit
+    discharge_air_temperature_sensor_2:
+      present_value: data.analog-input_2.present-value
+      units:
+        key: data.analog-input_2.units
+        values:
+          degrees_fahrenheit: degrees-fahrenheit
+    discharge_fan_run_command_1: MISSING
+    discharge_fan_run_command_2: MISSING
+    heating_water_valve_percentage_command_1: MISSING
+    heating_water_valve_percentage_command_2: MISSING
+    zone_air_cooling_temperature_setpoint_1: MISSING
+    zone_air_cooling_temperature_setpoint_2:
+      present_value: data.analog-value_7.present-value
+      units:
+        key: data.analog-value_7.units
+        values:
+          degrees_fahrenheit: degrees-fahrenheit
+    zone_air_heating_temperature_setpoint_1: MISSING
+    zone_air_heating_temperature_setpoint_2:
+      present_value: data.analog-value_8.present-value
+      units:
+        key: data.analog-value_8.units
+        values:
+          degrees_fahrenheit: degrees-fahrenheit
+    zone_air_relative_humidity_sensor:
+      present_value: data.analog-input_3.present-value
+      units:
+        key: data.analog-input_3.units
+        values:
+          percent_relative_humidity: percent-relative-humidity
+    zone_air_temperature_sensor_1:
+      present_value: data.analog-input_4.present-value
+      units:
+        key: data.analog-input_4.units
+        values:
+          degrees_fahrenheit: degrees-fahrenheit
+    zone_air_temperature_sensor_2: MISSING
+  type: GATEWAYS/PASSTHROUGH
+
+eb90910e-4c5c-46d4-a676-2f5becca511d:
+  cloud_device_id: '2731776931904416'
+  code: CRAC 2-1-1 Interface
+  connections:
+    6a19371c-05c8-4a01-8c4a-26f256be4c7f:
+    - CONTAINS
+    9bd9c387-1fd4-4085-b74c-0d241852b9a6:
+    - CONTAINS
+  etag: f2d0ec71
+  translation:
+    chilled_water_valve_percentage_command_1:
+      present_value: data.analog-value_12.present-value
+      units:
+        key: data.analog-value_12.units
+        values:
+          percent: percent
+    chilled_water_valve_percentage_command_2:
+      present_value: data.analog-value_2.present-value
+      units:
+        key: data.analog-value_2.units
+        values:
+          percent: percent
+    discharge_fan_run_status_1:
+      present_value: data.binary-value_33.present-value
+      states:
+        'OFF': inactive
+        'ON': active
+    discharge_fan_run_status_2:
+      present_value: data.binary-value_5.present-value
+      states:
+        'OFF': inactive
+        'ON': active
+    discharge_fan_speed_percentage_command_1:
+      present_value: data.analog-value_10.present-value
+      units:
+        key: data.analog-value_10.units
+        values:
+          percent: percent
+    discharge_fan_speed_percentage_command_2:
+      present_value: data.analog-value_20.present-value
+      units:
+        key: data.analog-value_20.units
+        values:
+          percent: percent
+    return_air_temperature_sensor_1:
+      present_value: data.analog-value_16.present-value
+      units:
+        key: data.analog-value_16.units
+        values:
+          degrees_fahrenheit: degrees-fahrenheit
+    return_air_temperature_sensor_2:
+      present_value: data.analog-value_6.present-value
+      units:
+        key: data.analog-value_6.units
+        values:
+          degrees_fahrenheit: degrees-fahrenheit
+  type: GATEWAYS/PASSTHROUGH
+
+366b276d-69c3-4487-b56b-4dbf7caeeaf9:
+  code: US-SVL-TC2:FCU:CRAC 2-1-1
+  connections:
+    6a19371c-05c8-4a01-8c4a-26f256be4c7f:
+    - CONTAINS
+  etag: 4d84f22b
+  links:
+    2f3064be-1ec4-404a-9b1a-69472696d772:
+      discharge_air_temperature_sensor: discharge_air_temperature_sensor_1
+      discharge_fan_run_command: discharge_fan_run_command_1
+      heating_water_valve_percentage_command: heating_water_valve_percentage_command_1
+      zone_air_cooling_temperature_setpoint: zone_air_cooling_temperature_setpoint_2
+      zone_air_heating_temperature_setpoint: zone_air_heating_temperature_setpoint_2
+      zone_air_relative_humidity_sensor: zone_air_relative_humidity_sensor
+      zone_air_temperature_sensor: zone_air_temperature_sensor_1
+    eb90910e-4c5c-46d4-a676-2f5becca511d:
+      chilled_water_valve_percentage_command: chilled_water_valve_percentage_command_2
+      discharge_fan_run_status: discharge_fan_run_status_2
+      discharge_fan_speed_percentage_command: discharge_fan_speed_percentage_command_1
+      return_air_temperature_sensor: return_air_temperature_sensor_2
+  type: HVAC/FCU_DFSS_DFVSC_DSP_HWZC_CHWZC
+
+6f1607b6-4281-4b99-a4f3-71decf4ea902:
+  code: US-SVL-TC2/CRAC 2-1-1
+  connections:
+    6a19371c-05c8-4a01-8c4a-26f256be4c7f:
+    - CONTAINS
+    9bd9c387-1fd4-4085-b74c-0d241852b9a6:
+    - CONTAINS
+  etag: 7c61db57
+  links:
+    2f3064be-1ec4-404a-9b1a-69472696d772:
+      discharge_air_temperature_sensor: discharge_air_temperature_sensor_1
+      discharge_fan_run_command: discharge_fan_run_command_1
+      zone_air_cooling_temperature_setpoint: zone_air_cooling_temperature_setpoint
+      zone_air_heating_temperature_setpoint: zone_air_heating_temperature_setpoint
+      zone_air_relative_humidity_sensor: zone_air_relative_humidity_sensor
+      zone_air_temperature_sensor: zone_air_temperature_sensor
+    eb90910e-4c5c-46d4-a676-2f5becca511d:
+      chilled_water_valve_percentage_command: chilled_water_valve_percentage_command_2
+      discharge_fan_run_status: discharge_fan_run_status_2
+      discharge_fan_speed_percentage_command: discharge_fan_speed_percentage_command_1
+      return_air_temperature_sensor: return_air_temperature_sensor_2
+  type: HVAC/FCU_DFSS_DFVSC_DSP_CHWZC
+
+c1fe6464-28e1-40b2-8c6e-829a7a2490c7:
+  code: US-SVL-TC2:FCU:CRAC 2-1-2
+  connections:
+    6a19371c-05c8-4a01-8c4a-26f256be4c7f:
+    - CONTAINS
+  etag: 8b8c5690
+  links:
+    2f3064be-1ec4-404a-9b1a-69472696d772:
+      discharge_air_temperature_sensor: discharge_air_temperature_sensor_2
+      discharge_fan_run_command: discharge_fan_run_command_2
+      heating_water_valve_percentage_command: heating_water_valve_percentage_command_2
+      zone_air_cooling_temperature_setpoint: zone_air_cooling_temperature_setpoint_1
+      zone_air_heating_temperature_setpoint: zone_air_heating_temperature_setpoint_1
+      zone_air_temperature_sensor: zone_air_temperature_sensor_2
+    eb90910e-4c5c-46d4-a676-2f5becca511d:
+      chilled_water_valve_percentage_command: chilled_water_valve_percentage_command_1
+      discharge_fan_run_status: discharge_fan_run_status_1
+      discharge_fan_speed_percentage_command: discharge_fan_speed_percentage_command_2
+      return_air_temperature_sensor: return_air_temperature_sensor_1
+  type: HVAC/FCU_DFSS_DFVSC_DSP_HWZC_CHWZC
+
+e8ae518b-d092-426f-bbdb-83211d319975:
+  code: US-SVL-TC2/CRAC 2-1-2
+  connections:
+    6a19371c-05c8-4a01-8c4a-26f256be4c7f:
+    - CONTAINS
+    9bd9c387-1fd4-4085-b74c-0d241852b9a6:
+    - CONTAINS
+  etag: 68772f18
+  links:
+    2f3064be-1ec4-404a-9b1a-69472696d772:
+      discharge_air_temperature_sensor: discharge_air_temperature_sensor_2
+      discharge_fan_run_command: discharge_fan_run_command_2
+      zone_air_cooling_temperature_setpoint: zone_air_cooling_temperature_setpoint
+      zone_air_heating_temperature_setpoint: zone_air_heating_temperature_setpoint
+      zone_air_relative_humidity_sensor: zone_air_relative_humidity_sensor
+      zone_air_temperature_sensor: zone_air_temperature_sensor
+    eb90910e-4c5c-46d4-a676-2f5becca511d:
+      chilled_water_valve_percentage_command: chilled_water_valve_percentage_command_1
+      discharge_fan_run_status: discharge_fan_run_status_1
+      discharge_fan_speed_percentage_command: discharge_fan_speed_percentage_command_2
+      return_air_temperature_sensor: return_air_temperature_sensor_1
+  type: HVAC/FCU_DFSS_DFVSC_DSP_CHWZC
