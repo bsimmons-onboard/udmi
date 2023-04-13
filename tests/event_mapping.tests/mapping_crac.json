@@ -1,0 +1,1 @@
+{"status": "error", "errors": [{"location": "header", "name": "Accept", "description": "Accept header should be one of ['application/x-yaml', 'application/json']"}]}
