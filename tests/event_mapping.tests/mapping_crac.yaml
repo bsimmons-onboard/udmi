@@ -1,0 +1,316 @@
+22fe2983-2813-4ab5-b09e-e927f56da48a:
+  cloud_device_id: '2665653793591020'
+  code: '14'
+  connections:
+    683db918-932d-46fe-8c91-e292693b9e6c: CONTAINS
+  translation:
+    compressor_current_sensor_1: MISSING
+    compressor_current_sensor_2: MISSING
+    compressor_run_command_1: MISSING
+    compressor_run_command_2: MISSING
+    compressor_run_status_1: MISSING
+    compressor_run_status_2: MISSING
+    damper_percentage_command:
+      present_value: data.analog-value_21.present-value
+      units:
+        key: data.analog-value_21.units
+        values:
+          percent: percent
+    discharge_air_temperature_sensor: MISSING
+    discharge_fan_run_command: MISSING
+    discharge_fan_run_status: MISSING
+    economizer_mode: MISSING
+    failed_alarm_1:
+      present_value: data.binary-value_4000000.present-value
+      states:
+        ACTIVE: ACTIVE
+        INACTIVE: INACTIVE
+    failed_alarm_2:
+      present_value: data.binary-value_4000002.present-value
+      states:
+        ACTIVE: ACTIVE
+        INACTIVE: INACTIVE
+    failed_alarm_3:
+      present_value: data.binary-value_4000004.present-value
+      states:
+        ACTIVE: ACTIVE
+        INACTIVE: INACTIVE
+    failed_alarm_4:
+      present_value: data.binary-value_9.present-value
+      states:
+        ACTIVE: ACTIVE
+        INACTIVE: INACTIVE
+    heater_run_command: MISSING
+    outside_air_damper_percentage_command: MISSING
+    outside_air_temperature_sensor: MISSING
+    refrigerant_discharge_pressure_sensor_1: MISSING
+    refrigerant_discharge_pressure_sensor_2: MISSING
+    refrigerant_discharge_temperature_sensor_1: MISSING
+    refrigerant_discharge_temperature_sensor_2: MISSING
+    refrigerant_liquid_pressure_sensor_1: MISSING
+    refrigerant_liquid_pressure_sensor_2: MISSING
+    refrigerant_liquid_saturation_temperature_sensor_1: MISSING
+    refrigerant_liquid_saturation_temperature_sensor_2: MISSING
+    refrigerant_liquid_temperature_sensor_1: MISSING
+    refrigerant_liquid_temperature_sensor_2: MISSING
+    refrigerant_subcooling_temperature_sensor_1: MISSING
+    refrigerant_subcooling_temperature_sensor_2: MISSING
+    refrigerant_suction_pressure_sensor_1: MISSING
+    refrigerant_suction_pressure_sensor_2: MISSING
+    refrigerant_suction_saturation_temperature_sensor_1: MISSING
+    refrigerant_suction_saturation_temperature_sensor_2: MISSING
+    refrigerant_suction_superheat_temperature_sensor_1: MISSING
+    refrigerant_suction_superheat_temperature_sensor_2: MISSING
+    refrigerant_suction_temperature_sensor_1: MISSING
+    refrigerant_suction_temperature_sensor_2: MISSING
+    return_air_temperature_sensor_1:
+      present_value: data.analog-value_16.present-value
+      units:
+        key: data.analog-value_16.units
+        values:
+          degrees_fahrenheit: degrees-fahrenheit
+    return_air_temperature_sensor_2:
+      present_value: data.analog-value_22.present-value
+      units:
+        key: data.analog-value_22.units
+        values:
+          degrees_fahrenheit: degrees-fahrenheit
+    run_status_1:
+      present_value: data.binary-input_1.present-value
+      states:
+        'OFF': inactive
+        'ON': active
+    run_status_2:
+      present_value: data.binary-value_1.present-value
+      states:
+        'OFF': inactive
+        'ON': active
+    run_status_3:
+      present_value: data.binary-value_10.present-value
+      states:
+        'OFF': inactive
+        'ON': active
+    run_status_4:
+      present_value: data.binary-value_11.present-value
+      states:
+        'OFF': inactive
+        'ON': active
+    run_status_5:
+      present_value: data.binary-value_5.present-value
+      states:
+        'OFF': inactive
+        'ON': active
+    run_status_6:
+      present_value: data.binary-value_6.present-value
+      states:
+        'OFF': inactive
+        'ON': active
+    run_status_7:
+      present_value: data.binary-value_7.present-value
+      states:
+        'OFF': inactive
+        'ON': active
+    runtime_counter:
+      present_value: data.analog-value_18.present-value
+      units:
+        key: data.analog-value_18.units
+        values:
+          hours: hours
+    supply_air_temperature_sensor:
+      present_value: data.analog-input_1.present-value
+      units:
+        key: data.analog-input_1.units
+        values:
+          degrees_fahrenheit: degrees-fahrenheit
+    zone_air_co2_concentration_sensor: MISSING
+    zone_air_co2_concentration_setpoint: MISSING
+    zone_air_cooling_temperature_setpoint:
+      present_value: data.analog-value_7.present-value
+      units:
+        key: data.analog-value_7.units
+        values:
+          degrees_fahrenheit: degrees-fahrenheit
+    zone_air_heating_temperature_setpoint:
+      present_value: data.analog-value_8.present-value
+      units:
+        key: data.analog-value_8.units
+        values:
+          degrees_fahrenheit: degrees-fahrenheit
+    zone_air_occupied_cooling_temperature_sepoint:
+      present_value: data.analog-value_1.present-value
+      units:
+        key: data.analog-value_1.units
+        values:
+          degrees_fahrenheit: degrees-fahrenheit
+    zone_air_occupied_heating_temperature_setpoint:
+      present_value: data.analog-value_2.present-value
+      units:
+        key: data.analog-value_2.units
+        values:
+          degrees_fahrenheit: degrees-fahrenheit
+    zone_air_relative_humidity_sensor_1:
+      present_value: data.analog-input_3.present-value
+      units:
+        key: data.analog-input_3.units
+        values:
+          percent: percent-relative-humidity
+    zone_air_relative_humidity_sensor_2:
+      present_value: data.analog-value_11.present-value
+      units:
+        key: data.analog-value_11.units
+        values:
+          percent: percent-relative-humidity
+    zone_air_relative_humidity_sensor_3:
+      present_value: data.analog-value_12.present-value
+      units:
+        key: data.analog-value_12.units
+        values:
+          percent: percent-relative-humidity
+    zone_air_temperature_sensor:
+      present_value: data.analog-input_4.present-value
+      units:
+        key: data.analog-input_4.units
+        values:
+          degrees_fahrenheit: degrees-fahrenheit
+    zone_air_unoccupied_cooling_temperature_setpoint:
+      present_value: data.analog-value_3.present-value
+      units:
+        key: data.analog-value_3.units
+        values:
+          degrees_fahrenheit: degrees-fahrenheit
+    zone_air_unoccupied_heating_temperature_setpoint:
+      present_value: data.analog-value_4.present-value
+      units:
+        key: data.analog-value_4.units
+        values:
+          degrees_fahrenheit: degrees-fahrenheit
+  type: HVAC/AHU_DFSS_DX2ZC_ECONZ_CO2C_DSP_RCKTM2X_HTZC_CC2XM_RTM_DTM
+683db918-932d-46fe-8c91-e292693b9e6c:
+  code: SVL-CRAC
+  type: FACILITIES/BUILDING
+virtual/2665653793591020/14:
+  code: SVL-CRAC.AHU.14
+  connections:
+    683db918-932d-46fe-8c91-e292693b9e6c: CONTAINS
+  links:
+    '14':
+      zone_air_cooling_temperature_setpoint: zone_air_cooling_temperature_setpoint
+      zone_air_heating_temperature_setpoint: zone_air_heating_temperature_setpoint
+  translation:
+    exhaust_air_damper_percentage_command: MISSING
+    exhaust_air_flowrate_sensor: MISSING
+    exhaust_air_flowrate_setpoint: MISSING
+    zone_air_temperature_sensor: MISSING
+  type: HVAC/VAV_DSP_ED
+virtual/2665653793591020/3102731:
+  code: SVL-CRAC.AHU.3102731
+  connections:
+    683db918-932d-46fe-8c91-e292693b9e6c: CONTAINS
+  links:
+    '14':
+      run_status_1: run_status_5
+      run_status_2: run_status_6
+      run_status_3: run_status_7
+  translation:
+    run_command: MISSING
+    speed_percentage_command: MISSING
+    zone_air_temperature_sensor: MISSING
+  type: HVAC/FAN_SS_VSC_ZTM
+virtual/2665653793591020/3102731_10:
+  code: SVL-CRAC.AHU.3102731_10
+  connections:
+    683db918-932d-46fe-8c91-e292693b9e6c: CONTAINS
+  links:
+    '14':
+      failed_alarm_1: failed_alarm_1
+      failed_alarm_2: failed_alarm_2
+      failed_alarm_3: failed_alarm_3
+  translation:
+    seismic_alarm: MISSING
+  type: SAFETY/SSS_STD
+virtual/2665653793591020/3102731_15:
+  code: SVL-CRAC.AHU.3102731_15
+  connections:
+    683db918-932d-46fe-8c91-e292693b9e6c: CONTAINS
+  links:
+    '14':
+      return_air_temperature_sensor: return_air_temperature_sensor_1
+      zone_air_occupied_cooling_temperature_sepoint: zone_air_occupied_cooling_temperature_sepoint
+      zone_air_relative_humidity_sensor_1: zone_air_relative_humidity_sensor_1
+      zone_air_relative_humidity_sensor_2: zone_air_relative_humidity_sensor_2
+      zone_air_relative_humidity_sensor_3: zone_air_relative_humidity_sensor_3
+      zone_air_temperature_sensor: zone_air_temperature_sensor
+  translation:
+    chilled_water_valve_percentage_command: MISSING
+    discharge_fan_run_command: MISSING
+    discharge_fan_run_status: MISSING
+    zone_air_cooling_temperature_setpoint: MISSING
+  type: HVAC/FCU_DFSS_CHWZC_RTM_ZHM
+virtual/2665653793591020/3102731_2:
+  code: SVL-CRAC.AHU.3102731_2
+  connections:
+    683db918-932d-46fe-8c91-e292693b9e6c: CONTAINS
+  links:
+    '14':
+      failed_alarm: failed_alarm_4
+      run_status_1: run_status_1
+      run_status_2: run_status_2
+      run_status_3: run_status_3
+      run_status_4: run_status_4
+      runtime_counter: runtime_counter
+      supply_air_temperature_sensor: supply_air_temperature_sensor
+  translation:
+    filter_differential_pressure_sensor_1: MISSING
+    filter_differential_pressure_sensor_2: MISSING
+    outside_air_temperature_sensor: MISSING
+    return_air_temperature_sensor: MISSING
+    run_command: MISSING
+    speed_percentage_command: MISSING
+    supply_air_flowrate_sensor: MISSING
+    supply_air_static_pressure_sensor: MISSING
+    supply_air_static_pressure_setpoint: MISSING
+  type: HVAC/HX_VSC_SSPC_SFM_STM_RTM_OA_FDPM2X
+virtual/2665653793591020/3102731_4:
+  code: SVL-CRAC.AHU.3102731_4
+  connections:
+    683db918-932d-46fe-8c91-e292693b9e6c: CONTAINS
+  links:
+    '14':
+      damper_percentage_command: damper_percentage_command
+      return_air_temperature_sensor: return_air_temperature_sensor_2
+      zone_air_occupied_heating_temperature_setpoint: zone_air_occupied_heating_temperature_setpoint
+      zone_air_unoccupied_cooling_temperature_setpoint: zone_air_unoccupied_cooling_temperature_setpoint
+      zone_air_unoccupied_heating_temperature_setpoint: zone_air_unoccupied_heating_temperature_setpoint
+  translation:
+    economizer_mode: MISSING
+    exhaust_air_static_pressure_sensor: MISSING
+    exhaust_air_static_pressure_setpoint: MISSING
+    exhaust_fan_run_command_1: MISSING
+    exhaust_fan_run_command_2: MISSING
+    exhaust_fan_run_status_1: MISSING
+    exhaust_fan_run_status_2: MISSING
+    exhaust_fan_speed_percentage_command_1: MISSING
+    exhaust_fan_speed_percentage_command_2: MISSING
+    heat_wheel_run_command: MISSING
+    heat_wheel_run_status: MISSING
+    heat_wheel_speed_percentage_command: MISSING
+    heater_run_command_1: MISSING
+    heater_run_command_2: MISSING
+    heater_run_command_3: MISSING
+    heater_run_command_4: MISSING
+    mixed_air_temperature_sensor: MISSING
+    outside_air_damper_percentage_command: MISSING
+    outside_air_temperature_sensor: MISSING
+    supply_air_flowrate_sensor: MISSING
+    supply_air_flowrate_setpoint: MISSING
+    supply_air_static_pressure_sensor: MISSING
+    supply_air_static_pressure_setpoint: MISSING
+    supply_air_temperature_sensor: MISSING
+    supply_air_temperature_setpoint: MISSING
+    supply_fan_run_command_1: MISSING
+    supply_fan_run_command_2: MISSING
+    supply_fan_run_status_1: MISSING
+    supply_fan_run_status_2: MISSING
+    supply_fan_speed_percentage_command_1: MISSING
+    supply_fan_speed_percentage_command_2: MISSING
+  type: HVAC/AHU_ECON_EFSS2X_EFVSC2X_EPC_HT4SC_HTWHLSTC_SFC_SFSS2X_SFVSC2X_SSPC
